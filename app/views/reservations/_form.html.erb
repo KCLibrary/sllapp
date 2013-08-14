@@ -1,0 +1,35 @@
+<%= form_for(@reservation) do |f| %>
+  <% if @reservation.errors.any? %>
+    <div id="error_explanation" class="alert alert-error">
+      <ul class="unstyled">
+        <% @reservation.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>Confirm this reservation</p>
+  <div class="row">
+    <div class="span6">
+      <%= f.hidden_field :start_datetime %>
+      <%= f.hidden_field :end_datetime %>
+      <%= f.hidden_field :user_id %>
+      <%= f.hidden_field :resource_id %>
+      <table class="table table-bordered">
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+        <tr>
+          <td><%= @reservation.start_datetime.to_date.to_formatted_s(:long) %></td>
+          <td>
+            <%= raw(@reservation.start_datetime.strftime("%I:%M%p") + " &ndash; " + @reservation.end_datetime.strftime("%I:%M%p")) %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="actions form-actions">
+    <%= f.submit :class => 'btn' %>
+  </div>
+<% end %>

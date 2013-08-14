@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_datetime: 2013-06-15 12:06:32
+  end_datetime: 2013-06-15 12:06:32
+  reservation: 
+  resource: 
+
+two:
+  start_datetime: 2013-06-15 12:06:32
+  end_datetime: 2013-06-15 12:06:32
+  reservation: 
+  resource: 

@@ -1,0 +1,22 @@
+<div class="sll-nav navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <%= content_tag :li, :class => active[:reservations] do %>
+        <%= link_to "Home", root_path %>
+      <% end %>
+      <%= content_tag :li, :class => active[:about] do %>
+        <a href="https://mozillaignite.org/apps/460/">About</a>
+      <% end %>
+      <%= content_tag :li, :class => active[:existing] do %>
+        <%= link_to "Check existing reservations", reservations_path %>
+      <% end %>
+      <%= content_tag :li, :class => active[:sign_in] do %>
+        <% if user_signed_in? %>
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

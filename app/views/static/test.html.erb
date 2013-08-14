@@ -1,0 +1,21 @@
+<div class="sll-nav navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Check existing reservations</a></li>
+      <li><a href="#">Sign In</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="span6 sll-dates">
+    <div class="sll-date-fields">
+      <%= select_date(Date.today, :prefix => 'ssl-available-dates') %>
+    </div>
+    <div id="datepicker"></div>
+  </div>
+  <div class="span6 s">
+  </div>
+</div>
+

@@ -1,0 +1,120 @@
+@import "twitter/bootstrap/bootstrap";
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings");
+@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+@import "datepicker";
+
+// @import 'cosmo/bootswatch';
+// @import 'cosmo/variables';
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(//themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@sansFontFamily: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+.sll-header { margin-bottom: 20px;}
+
+.sll-header .navbar-inner {
+  color: @white;
+  background-image: image-url("sll-header-background-1px.png");
+  background-repeat: repeat-x;
+}
+
+.sll-header h2 {
+  font-weight: normal;
+  line-height: 52px;
+  font-size: 28px;
+}
+
+.sll-header h4 {
+  font-weight: normal;
+}
+
+.sll-header-img {
+  background-image: image-url("sll-header-image-1024px.png");
+	height: 72px;
+	background-repeat: no-repeat;
+	margin-left: -15px;
+}
+
+.sll-date-fields select { width: auto; }
+.sll-date-fields { display: inline-block; }
+.sll-dates { 
+  text-align: center; 
+  box-sizing: border-box; 
+  border-right: 1px solid @grayLighter; 
+}
+
+.sll-time-fields { 
+  display: inline-block;
+  li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.sll-times { 
+  text-align: center; 
+  box-sizing: border-box; 
+  border-right: 1px solid @grayLighter;
+  height: 450px;
+  overflow: auto;
+}
+
+.sll-light-gray {
+  color: @grayLight;
+}
+
+.sll-post { text-align: center; }
+
+.library-link-div {
+  height: 72px;
+  width: 420px;
+}
+
+.sll-header .visible-phone a {
+  color: @white;
+}
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 20px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.alert ul.unstyled, .alert ol.unstyled {
+  padding: 0;
+  margin: 0;
+}

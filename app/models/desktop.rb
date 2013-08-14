@@ -1,0 +1,1 @@
+class Desktop < Resource; end

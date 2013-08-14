@@ -1,0 +1,7 @@
+development: &connection
+  host: <%= ENV['sip2_host'] %>
+  port: <%= ENV['sip2_port'] %>
+  ao: <%= ENV['sip2_ao'] %>
+  
+production:
+  <<: *connection

@@ -1,0 +1,31 @@
+<%= render 'shared/sll_nav', :active => {:existing => 'active'} %>
+<div class="page-header">
+  <h4>Listing reservations</h4>
+</div>
+
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Options</th>
+  </tr>
+  <% if @reservations.empty? %>
+    <tr><td colspan="3">There's nothing here.</td></tr>
+  <% else %>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td>
+          <%= reservation.start_datetime.to_date.to_formatted_s(:long) %>
+        </td>
+        <td>
+          <%= raw(reservation.start_datetime.strftime("%I:%M%p") + " &ndash; " + reservation.end_datetime.strftime("%I:%M%p")) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', reservation, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>  
+</table>
+
+<%= link_to 'New Reservation', available_reservations_path %>

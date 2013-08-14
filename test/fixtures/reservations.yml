@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  temp_user: 
+  resource: 
+  start: 2013-06-08 08:50:01
+  end: 2013-06-08 08:50:01
+  description: MyString
+
+two:
+  temp_user: 
+  resource: 
+  start: 2013-06-08 08:50:01
+  end: 2013-06-08 08:50:01
+  description: MyString
