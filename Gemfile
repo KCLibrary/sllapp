@@ -37,6 +37,7 @@ gem 'rolify'
 gem 'devise_sip2_authenticatable', :git => 'https://github.com/kardeiz/devise_sip2_authenticatable.git'
 gem 'squeel'
 gem 'factory_girl'
+gem 'net-ldap'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
