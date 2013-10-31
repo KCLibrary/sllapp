@@ -4,11 +4,11 @@ class ReservationsController < ApplicationController
   
   def available
     if params['sll-date']
-      _date = params_to_date(params['sll-date']).to_formatted_s(:db)
+      _date = params_to_date(params['sll-date'])
       redirect_to available_reservations_path(_date) and return
     end
     
-    @st = SllTime.new(params[:date].try(:to_date) || Date.today)
+    @schedule = Sll::DailySchedule.new(params[:date])
     
     respond_to do |format|
       format.html 
@@ -91,22 +91,6 @@ class ReservationsController < ApplicationController
     end
   end
 
-  # PUT /reservations/1
-  # PUT /reservations/1.json
-  def update
-    @reservation = Reservation.find(params[:id])
-
-    respond_to do |format|
-      if @reservation.update_attributes(params[:reservation])
-        format.html { redirect_to @reservation, notice: 'Reservation was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /reservations/1
   # DELETE /reservations/1.json
   def destroy
@@ -123,7 +107,7 @@ class ReservationsController < ApplicationController
   private
   
   def params_to_date(ph)
-    Date.new(ph['year'].to_i, ph['month'].to_i, ph['day'].to_i) rescue nil
+    Date.new(ph['year'].to_i, ph['month'].to_i, ph['day'].to_i).to_formatted_s(:db) rescue nil
   end
   
 end

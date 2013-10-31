@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get "static/test"
-
-  match 'reservations/available(/:date)' => 'reservations#available', :as => 'available_reservations', :via => [:get, :post]
-  
-  match 'reservations/new' => 'reservations#new', :as => 'new_reservation', :via => [:get, :post]
+  match 'reservations/available(/:date)', {
+    :to => 'reservations#available',
+    :as => 'available_reservations', 
+    :via => [:get, :post]
+  }
+  match 'reservations/new', {
+    :to => 'reservations#new',
+    :as => 'new_reservation', 
+    :via => [:get, :post]
+  }
   resources :reservations, :except => [:new, :edit, :show, :update]
   
   root :to => 'reservations#available'

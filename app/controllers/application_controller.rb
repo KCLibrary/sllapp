@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   before_filter :store_location
 
   def store_location
-    session[:previous_url] = request.fullpath unless request_is_for_users?(request)
-    unless request_is_for_users?(request) || request_is_for_reservations_new_get?(request)
+    session[:previous_url] = request.fullpath unless request_is_for_users?
+    unless request_is_for_users? || request_is_for_reservations_new_get?
       session['sll-times'] = params['sll-times'] 
     end
   end
@@ -16,12 +16,12 @@ class ApplicationController < ActionController::Base
   
   private
   
-  def request_is_for_users?(req)
-    req.fullpath =~ /\/users/
+  def request_is_for_users?
+    request.fullpath =~ /\/users/
   end
   
-  def request_is_for_reservations_new_get?(req)
-    req.fullpath =~ /\/reservations\/new/ && req.method == "GET"
+  def request_is_for_reservations_new_get?
+    request.fullpath =~ /\/reservations\/new/ && request.method == "GET"
   end
   
 end

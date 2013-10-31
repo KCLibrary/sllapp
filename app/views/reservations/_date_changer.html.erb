@@ -1,0 +1,11 @@
+<div class="sll-date-fields">
+  <%= form_tag available_reservations_path, :method => :post, :class => "form-inline" do %>
+    <%= select_date(schedule.date, :prefix => 'sll-date') %>
+    <button class="btn">Update</button>
+  <% end %>
+</div>
+<%= content_tag :div, '', :id => "datepicker", :data => {
+  "date-format" => "yyyy-mm-dd",
+  "date" => schedule.date.to_s,
+  "sll-base-url" => available_reservations_url
+} %>

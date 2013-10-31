@@ -1,11 +1,13 @@
 class Resource < ActiveRecord::Base
   attr_accessible :description, :type
 	has_many :reservations
- 
-  def self.first_available(st, et)
-    where{
-      id << Reservation.overlap(st, et).select(:resource_id)
-    }.first
+  
+  def self._all
+    @_all ||= self.all
+  end
+  
+  def self._find_by_id(id)
+    _all.detect{|r| r.id == id }
   end
 	
 end

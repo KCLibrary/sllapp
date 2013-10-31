@@ -13,18 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130719140717) do
 
-  create_table "reservation_slots", :force => true do |t|
-    t.datetime "start_datetime"
-    t.datetime "end_datetime"
-    t.integer  "reservation_id"
-    t.integer  "resource_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  add_index "reservation_slots", ["reservation_id"], :name => "index_reservation_slots_on_reservation_id"
-  add_index "reservation_slots", ["resource_id"], :name => "index_reservation_slots_on_resource_id"
-
   create_table "reservations", :force => true do |t|
     t.integer  "user_id"
     t.integer  "resource_id"
@@ -41,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130719140717) do
   create_table "resources", :force => true do |t|
     t.string   "type"
     t.text     "description"
+    t.integer  "licenses"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

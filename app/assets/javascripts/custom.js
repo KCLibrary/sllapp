@@ -12,7 +12,7 @@ $(document).ready(function() {
     ].join('-');  
   }
 
-	$('#datepicker').datepicker().on('changeDate', function(e){    
+	$('#datepicker').datepicker().on('changeDate', function(e) {    
     window.location.href = $('#datepicker').data('sll-base-url') + '/' + formatDateString(e.date);
   });
   

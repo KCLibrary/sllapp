@@ -13,7 +13,6 @@
     <div class="span6">
       <%= f.hidden_field :start_datetime %>
       <%= f.hidden_field :end_datetime %>
-      <%= f.hidden_field :user_id %>
       <%= f.hidden_field :resource_id %>
       <table class="table table-bordered">
         <tr>
@@ -21,9 +20,9 @@
           <th>Time</th>
         </tr>
         <tr>
-          <td><%= @reservation.start_datetime.to_date.to_formatted_s(:long) %></td>
+          <td><%= @reservation.start_date_long_formatted_string %></td>
           <td>
-            <%= raw(@reservation.start_datetime.strftime("%I:%M%p") + " &ndash; " + @reservation.end_datetime.strftime("%I:%M%p")) %>
+            <%= raw(@reservation.time_slot_dashed_formatted_string) %>
           </td>
         </tr>
       </table>

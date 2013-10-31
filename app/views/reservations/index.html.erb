@@ -15,13 +15,16 @@
     <% @reservations.each do |reservation| %>
       <tr>
         <td>
-          <%= reservation.start_datetime.to_date.to_formatted_s(:long) %>
+          <%= reservation.start_date_long_formatted_string %>
         </td>
         <td>
-          <%= raw(reservation.start_datetime.strftime("%I:%M%p") + " &ndash; " + reservation.end_datetime.strftime("%I:%M%p")) %>
+          <%= raw(reservation.time_slot_dashed_formatted_string) %>
         </td>
         <td>
-          <%= link_to 'Destroy', reservation, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+          <%= link_to 'Destroy', reservation, {
+            :method => :delete, 
+            :data => { :confirm => 'Are you sure?' }
+          } %>
         </td>
       </tr>
     <% end %>

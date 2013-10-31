@@ -1,16 +1,16 @@
+require 'sll/time_functions'
+
 class Reservation < ActiveRecord::Base
   
-  include SllTimeHelper
+  include Sll::TimeFunctions
 
   belongs_to :user
   belongs_to :resource
   has_many :reservation_slots, :dependent => :destroy
   
   attr_accessible :description, :end_datetime, :start_datetime, :resource_id, :user_id
-  
-  before_create :create_reservation_slots
-  
-  validate :times_must_not_overlap
+    
+  validate :must_not_exceed_licenses
   validate :length_must_be_less_than_three_hours
   validate :end_datetime_must_be_in_future
   
@@ -19,8 +19,8 @@ class Reservation < ActiveRecord::Base
   
   scope :overlap, lambda {|st, et|
     where{
-      ((start_datetime >= st) & (start_datetime <= st)) |
-      ((end_datetime >= et) & (end_datetime <= et))
+      ((start_datetime >= st) & (start_datetime <= et)) |
+      ((end_datetime >= st) & (end_datetime <= et))
     }
   }
   
@@ -28,19 +28,20 @@ class Reservation < ActiveRecord::Base
     start_datetime..end_datetime
   end
   
-  private
-  
-  def create_reservation_slots
-    iterate_between(self.start_datetime, self.end_datetime).each do |ts|
-      reservation_slots.build({ 
-        :start_datetime => ts,
-        :end_datetime => ts.end_of_hour,
-        :resource_id => self.resource_id,
-        :reservation_id => self.id
-      })
-    end
+  def time_slot_hours
+    @_time_slot_hours ||= iterate_between(start_datetime, end_datetime)
   end
   
+  def start_date_long_formatted_string
+    self.start_datetime.to_date.to_formatted_s(:long)
+  end
+  
+  def time_slot_dashed_formatted_string
+    self.start_datetime.strftime("%I:%M%p") + " &ndash; " + self.end_datetime.strftime("%I:%M%p")
+  end
+  
+  private
+    
   def end_datetime_must_be_in_future
     if self.end_datetime <= Time.now
       errors.add(:base, 'Reservations must end in the future')
@@ -53,10 +54,12 @@ class Reservation < ActiveRecord::Base
     end
   end
   
-  def times_must_not_overlap
-    if Reservation.where(:resource_id => self.resource_id)
-      .overlap(self.start_datetime, self.end_datetime).count > 0
-      errors.add(:base, 'Reservations for a resource cannot overlap')
+  def must_not_exceed_licenses
+    count = Reservation.where({
+      :resource_id => self.resource_id
+    }).overlap(self.start_datetime, self.end_datetime).count    
+    if count > Resource._find_by_id(self.resource_id).licenses
+      errors.add(:base, 'No licenses left for time')
     end
   end
   

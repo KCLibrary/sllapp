@@ -5,50 +5,10 @@
 </div>
 <div class="row">
   <div class="span6 sll-dates">
-    <div class="sll-date-fields">
-      <%= form_tag available_reservations_path, :method => :post, :class => "form-inline" do %>
-        <%= select_date(@st.date, :prefix => 'sll-date') %>
-        <button class="btn">Update</button>
-      <% end %>
-    </div>
-    <%= content_tag :div, '', :id => "datepicker", :data => {
-      "date-format" => "yyyy-mm-dd",
-      "date" => @st.date.to_s,
-      "sll-base-url" => available_reservations_url
-    } %>
-  </div>
-  <hr class="visible-phone"/>
+    <%= render 'date_changer', :locals => { :schedule => @schedule } %>
+    <hr class="visible-phone"/>
+  </div>  
   <div class="span6">
-    <%= form_tag new_reservation_path, :method => :post do %>
-      <div class="row">
-        <div class="span3">
-          <div><p>Reserve up to three hours at a time</p></div>
-          <div class="sll-times">
-            <div class="sll-time-fields">
-              <ul class="unstyled">
-                <% @st.hours_of_day_available.each_with_index do |time, i| %>
-                  <li>
-                    <%= content_tag :label, :class => 'checkbox', 
-                      :title => time[:hour].to_date.to_s do %>
-                      <%= check_box_tag "sll-times[]", 
-                        time[:hour].to_formatted_s, false, :id => 'sll-times_' + i.to_s,
-                        :disabled => (time[:available] ? nil : "disabled") %>
-                      <span><%= time[:hour].strftime("%I:%M%p") %></span>
-                      <span class="sll-light-gray">
-                         - <%= time[:hour].end_of_hour.strftime("%I:%M%p") %>
-                      </span>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div> <!-- end sll-times -->
-        </div>
-        <hr class="visible-phone"/>
-        <div class="span3 sll-post">
-          <button class="btn btn-success btn-large">Make Reservation</button>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'date_form', :locals => { :schedule => @schedule } %>    
   </div>
 </div>
