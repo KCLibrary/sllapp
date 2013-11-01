@@ -6,7 +6,6 @@ class Reservation < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :resource
-  has_many :reservation_slots, :dependent => :destroy
   
   attr_accessible :description, :end_datetime, :start_datetime, :resource_id, :user_id
     

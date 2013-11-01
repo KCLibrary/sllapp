@@ -45,13 +45,10 @@ class ReservationsController < ApplicationController
       redirect_to available_reservations_url, 
         :notice => 'Please select times first' and return
     end
-    
-    st = Time.parse(sll_times.first)
-    et = Time.parse(sll_times.last).end_of_hour
-        
+
     @reservation = Reservation.new({ 
-      :start_datetime => st, 
-      :end_datetime => et
+      :start_datetime => Time.parse(sll_times.first), 
+      :end_datetime => Time.parse(sll_times.last).end_of_hour
     })
 
     respond_to do |format|
@@ -69,16 +66,8 @@ class ReservationsController < ApplicationController
   # POST /reservations.json
   def create
     @reservation = Reservation.new(params[:reservation])
-    
-    cu = current_user.try(:id)
-    re = Resource.first_available(@reservation.start_datetime, @reservation.end_datetime).try(:id)
-    
-    unless re
-      redirect_to available_reservations_url, 
-        :notice => 'Sorry, no resources available for those times' and return
-    end
-    
-    @reservation.assign_attributes(:user_id => cu, :resource_id => re)
+
+    @reservation.assign_attributes(:user_id => current_user.try(:id))
     
     respond_to do |format|
       if @reservation.save
