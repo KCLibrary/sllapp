@@ -5,18 +5,23 @@
       <div class="sll-times">
         <div class="sll-time-fields">
           <ul class="unstyled">
-            <% @st.hours_of_day_available.each_with_index do |time, i| %>
+            <% # FIX THIS %>
+            <% @schedule.availability_blocks do |o, i| %>
               <li>
-                <%= content_tag :label, :class => 'checkbox', 
-                  :title => time[:hour].to_date.to_s do %>
-                  <%= check_box_tag "sll-times[]", 
-                    time[:hour].to_formatted_s, false, :id => 'sll-times_' + i.to_s,
-                    :disabled => (time[:available] ? nil : "disabled") %>
-                  <span><%= time[:hour].strftime("%I:%M%p") %></span>
-                  <span class="sll-light-gray">
-                     - <%= time[:hour].end_of_hour.strftime("%I:%M%p") %>
-                  </span>
-                <% end %>
+                <div>                  
+                  <% o[:availability].each do |k, v| %>
+                    <%= content_tag :label, :class => 'checkbox', 
+                      :title => o[:hour].to_date.to_s do %>
+                    <%= check_box_tag "sll-times[times[]]", 
+                      time[:hour].to_formatted_s, false, :id => 'sll-times_#{k}_#{i}',
+                      :disabled => (v ? nil : "disabled") %>
+                    <%= hidden_field_tag "sll-times[resource_id]" %>
+                    <span><%= o[:hour].strftime("%I:%M%p") %></span>
+                    <span class="sll-light-gray">
+                      - <%= o[:hour].end_of_hour.strftime("%I:%M%p") %>
+                    </span>
+                  <% end %>
+                </div>
               </li>
             <% end %>
           </ul>

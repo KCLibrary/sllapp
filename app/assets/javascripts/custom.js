@@ -16,6 +16,7 @@ $(document).ready(function() {
     window.location.href = $('#datepicker').data('sll-base-url') + '/' + formatDateString(e.date);
   });
   
+  /*
   var _flag = true;
   $('.sll-time-fields input:checkbox').on('change', function(e) {
     var that = $(this);
@@ -31,10 +32,8 @@ $(document).ready(function() {
       }
       _flag = true;
     }
-    
-    
   });
-  
+  */
   //$('.selectable').selectable();
   
   /*

@@ -27,13 +27,13 @@ module Sll
       @hours_of_day ||= iterate_between(start_datetime, end_datetime)
     end
 
-    def availability_blocks(scope)
+    def availability_blocks(scope = Reservation)
       reservations = scope.overlap(hours_of_day[0], hours_of_day[-1]).group_by(&:resource_id)
-      Resource._all.inject(Hash.new) do |h, r|
-        h[r.id] = hours_of_day.map do |hour|
-          a = reservations[r.id] && reservations[r.id].count {|c| c.time_slot.cover? hour } > r.licenses
-          {:hour => hour, :available => !a}
-        end; h
+      hours_of_day.map do |hour|
+        a = Resource._all.inject(Hash.new) do |h, r|
+          h[r.id] = !(reservations[r.id] && reservations[r.id].count {|c| c.time_slot.cover? hour } > r.licenses); h
+        end
+        { :hour => hour, :availability => a}
       end
     end
   end
