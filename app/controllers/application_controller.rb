@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def store_location
     session[:previous_url] = request.fullpath unless request_is_for_users?
     unless request_is_for_users? || request_is_for_reservations_new_get?
-      session['sll-times'] = params['sll-times'] 
+      session['reservation-times'] = params['reservation-times'] 
     end
   end
 

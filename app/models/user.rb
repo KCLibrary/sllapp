@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   has_many :reservations
   validates_uniqueness_of :uid
   attr_accessible :uid, :last_name, :first_name, :email, :password, :remember_me
+  attr_accessor :password
+
+  def password
+  end
 
   def sip2_before_save(auth_hash)
     self.assign_attributes({ 

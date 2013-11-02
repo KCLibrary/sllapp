@@ -68,8 +68,8 @@ module AdHelper
         },
         :auth => {
           :method => :simple,
-          :username => config.fetch(:username, 'SLL\administrator'),
-          :password => config.fetch(:password, 'Ingrid0509$')
+          :username => config.fetch(:username, ''),
+          :password => config.fetch(:password, '')
         }
       }
     end

@@ -5,10 +5,10 @@
 </div>
 <div class="row">
   <div class="span6 sll-dates">
-    <%= render 'date_changer', :locals => { :schedule => @schedule } %>
+    <%= render 'available_date_changer', :schedule => @schedule %>
     <hr class="visible-phone"/>
   </div>  
   <div class="span6">
-    <%= render 'date_form', :locals => { :schedule => @schedule } %>    
+    <%= render 'available_date_form', :schedule => @schedule %>    
   </div>
 </div>

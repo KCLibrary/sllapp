@@ -5,8 +5,8 @@ module Sll
     
     attr_accessor :date
 
-    def initialize(date = Date.today)
-      @date = date.to_date
+    def initialize(date)
+      @date = (date || Date.today).to_date
     end
 
     def date_given_is_today?
@@ -27,15 +27,30 @@ module Sll
       @hours_of_day ||= iterate_between(start_datetime, end_datetime)
     end
 
-    def availability_blocks(scope = Reservation)
-      reservations = scope.overlap(hours_of_day[0], hours_of_day[-1]).group_by(&:resource_id)
-      hours_of_day.map do |hour|
-        a = Resource._all.inject(Hash.new) do |h, r|
-          h[r.id] = !(reservations[r.id] && reservations[r.id].count {|c| c.time_slot.cover? hour } > r.licenses); h
-        end
-        { :hour => hour, :availability => a}
+    def availability_blocks
+      @availability_blocks ||= hours_of_day.map do |hour|
+        { 
+          :hour => hour, 
+          :availability => Resource._all.inject(Hash.new) do |h, r|
+            h[r.id] = resource_available_at_hour?(r, hour); h
+          end
+        }
       end
     end
+    
+    def reservations_by_resource_id
+      @reservations_by_resource_id ||= begin
+        Reservation.overlap(hours_of_day[0], hours_of_day[-1]).group_by(&:resource_id)
+      end
+    end
+    
+    def resource_available_at_hour?(resource, hour)
+      return true unless reservations_by_resource_id[resource.id]
+      reservations_by_resource_id[resource.id].count do |c|
+        c.time_slot.cover? hour
+      end <= resource.licenses
+    end
+    
   end
 end
 

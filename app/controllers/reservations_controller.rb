@@ -25,30 +25,20 @@ class ReservationsController < ApplicationController
     end
   end
 
-  # GET /reservations/1
-  # GET /reservations/1.json
-  def show
-    @reservation = Reservation.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @reservation }
-    end
-  end
-
   # GET /reservations/new
   # GET /reservations/new.json
   def new
-
-    sll_times = params['sll-times'] || session['sll-times']    
-    if sll_times.blank?
-      redirect_to available_reservations_url, 
-        :notice => 'Please select times first' and return
+    unless r = params['reservation-times'] || session['reservation-times']
+      return select_times_first
     end
+    resource_id = r.keys.first
+    sll_times = r[resource_id] 
+    return select_times_first if sll_times.blank?
 
     @reservation = Reservation.new({ 
       :start_datetime => Time.parse(sll_times.first), 
-      :end_datetime => Time.parse(sll_times.last).end_of_hour
+      :end_datetime => Time.parse(sll_times.last).end_of_hour,
+      :resource_id => resource_id
     })
 
     respond_to do |format|
@@ -94,6 +84,11 @@ class ReservationsController < ApplicationController
   end
   
   private
+  
+  def select_times_first
+    redirect_to available_reservations_url, 
+      :notice => 'Please select times first'
+  end
   
   def params_to_date(ph)
     Date.new(ph['year'].to_i, ph['month'].to_i, ph['day'].to_i).to_formatted_s(:db) rescue nil
