@@ -61,7 +61,7 @@ module AdHelper
     end
     
     def encoded_pwd
-      Connector.encode_pwd(app_user.password) if app_user.password?
+      Connector.encode_pwd(app_user.password) unless app_user.password.nil?
     end    
     
   end
