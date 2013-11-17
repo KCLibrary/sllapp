@@ -8,9 +8,10 @@
     <th>Date</th>
     <th>Time</th>
     <th>Options</th>
+    <th>RDP file</th>
   </tr>
   <% if @reservations.empty? %>
-    <tr><td colspan="3">There's nothing here.</td></tr>
+    <tr><td colspan="4">There's nothing here.</td></tr>
   <% else %>
     <% @reservations.each do |reservation| %>
       <tr>
@@ -25,6 +26,9 @@
             :method => :delete, 
             :data => { :confirm => 'Are you sure?' }
           } %>
+        </td>
+        <td>
+          <%= link_to "Download", rdp_file_path %>
         </td>
       </tr>
     <% end %>

@@ -1,8 +1,8 @@
 development: &connection
-  host: <%= ENV['ad_host'] %>
-  port: <%= ENV['ad_port'] %>
-  base: <%= ENV['ad_base'] %>
-  username: <%= ENV['ad_username'] %>
-  password: <%= ENV['ad_password'] %>
+  :host: <%= ENV['ad_host'] %>
+  :port: <%= ENV['ad_port'] %>
+  :base: <%= ENV['ad_base'] %>
+  :username: <%= ENV['ad_username'] %>
+  :password: <%= ENV['ad_password'] %>
 production:
   <<: *connection

@@ -16,12 +16,25 @@ class Reservation < ActiveRecord::Base
   validates :user, :presence => true
   validates :resource, :presence => true
   
+  delegate :uid, :to => :user, :allow_nil => true, :prefix => true
+  
+  after_save :create_active_directory_reservation
+  after_destroy :destroy_active_directory_reservation
+  
   scope :overlap, lambda {|st, et|
     where{
       ((start_datetime >= st) & (start_datetime <= et)) |
       ((end_datetime >= st) & (end_datetime <= et))
     }
   }
+  
+  def length
+    ((end_datetime - start_datetime) / 3600).round
+  end
+  
+  def queue_name
+    "q-#{id}"
+  end
   
   def time_slot
     start_datetime..end_datetime
@@ -36,7 +49,8 @@ class Reservation < ActiveRecord::Base
   end
   
   def time_slot_dashed_formatted_string
-    self.start_datetime.strftime("%I:%M%p") + " &ndash; " + self.end_datetime.strftime("%I:%M%p")
+    [ self.start_datetime.strftime("%I:%M%p"), 
+      self.end_datetime.strftime("%I:%M%p") ].join(" &ndash; ")
   end
   
   private
@@ -60,6 +74,14 @@ class Reservation < ActiveRecord::Base
     if count > Resource._find_by_id(self.resource_id).licenses
       errors.add(:base, 'No licenses left for time')
     end
+  end
+  
+  def create_active_directory_reservation
+    AdHelper::Reservation.new(self).create_and_delete
+  end
+  
+  def destroy_active_directory_reservation
+    AdHelper::Reservation.new(self).delete_now
   end
   
 end
