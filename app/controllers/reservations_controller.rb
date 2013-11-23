@@ -37,7 +37,7 @@ class ReservationsController < ApplicationController
 
     @reservation = Reservation.new({ 
       :start_datetime => Time.parse(sll_times.first), 
-      :end_datetime => Time.parse(sll_times.last).end_of_hour,
+      :end_datetime => Time.parse(sll_times.last) + 1.hour,
       :resource_id => resource_id
     })
 

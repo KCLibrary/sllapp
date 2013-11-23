@@ -2,7 +2,7 @@ module Sll
   module TimeFunctions
 
     def iterate_between(start_datetime, end_datetime)
-      if start_datetime > end_datetime then []
+      if start_datetime >= end_datetime then []
       else
         iterate_between(start_datetime + 1.hour, end_datetime).unshift(start_datetime)
       end

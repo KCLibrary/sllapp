@@ -20,16 +20,16 @@ class Reservation < ActiveRecord::Base
   
   after_save :create_active_directory_reservation
   after_destroy :destroy_active_directory_reservation
-  
+ 
   scope :overlap, lambda {|st, et|
     where{
-      ((start_datetime >= st) & (start_datetime <= et)) |
-      ((end_datetime >= st) & (end_datetime <= et))
+      (start_datetime < et) & (end_datetime > st)
     }
   }
   
+  
   def length
-    ((end_datetime - start_datetime) / 3600).round
+    ((end_datetime - start_datetime) / 1.day).to_i
   end
   
   def queue_name
@@ -62,7 +62,7 @@ class Reservation < ActiveRecord::Base
   end
   
   def length_must_be_less_than_three_hours
-    if (self.end_datetime - self.start_datetime) >= 3.hours
+    if (self.end_datetime - self.start_datetime) > 3.hours
       errors.add(:base, 'Reservations cannot last more than 3 hours')
     end
   end

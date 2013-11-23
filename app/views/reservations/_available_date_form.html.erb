@@ -5,20 +5,22 @@
       <div class="sll-times">
         <div class="sll-time-fields">
           <ul class="unstyled">
-            <% schedule.availability_blocks.each_with_index do |o, i| %>
+            <% schedule.availability_blocks.each_with_index do |ts, i| %>
               <li>               
-                <% o[:availability].each do |k, v| %>
+                <% ts.resources.each do |resource| %>
                   <%= content_tag :label, :class => 'checkbox inline', 
-                    :title => o[:hour].to_date.to_s do %>
-                    <%= check_box_tag "reservation-times[#{k}][]", 
-                      o[:hour].to_formatted_s, false, :id => 'reservation-times_#{k}_#{i}',
-                      :disabled => (v ? nil : "disabled") %>
+                    :title => ts.start_hour.to_s do %>
+                    <%= check_box_tag "reservation-times[#{resource.id}][]", 
+                      ts.start_hour.to_formatted_s, false, {
+                        :id => "reservation-times_#{resource.id}_#{i}",
+                        :disabled => !resource.available
+                      } %>
                   <% end %>
                 <% end %>
                   <label class="checkbox inline time-helper">
-                    <span><%= o[:hour].strftime("%I:%M%p") %></span>
+                    <span><%= ts.start_hour.strftime("%I:%M%p") %></span>
                     <span class="sll-light-gray">
-                      - <%= o[:hour].end_of_hour.strftime("%I:%M%p") %>
+                      - <%= ts.end_hour.strftime("%I:%M%p") %>
                     </span>
                   </label>       
               </li>
