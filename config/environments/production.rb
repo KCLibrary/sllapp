@@ -1,6 +1,10 @@
 Sllapp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  config.after_initialize do 
+    Delayed::Job.scaler = :heroku_cedar
+  end
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
