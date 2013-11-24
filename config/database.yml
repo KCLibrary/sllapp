@@ -17,5 +17,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: sllapp_production
+  database: sllapp
+  username: rails
+  password: psyche2279
   pool: 5
