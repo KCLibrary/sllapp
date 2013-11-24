@@ -48,6 +48,12 @@ GEM
     bcrypt-ruby (3.1.2)
     builder (3.0.4)
     cancan (1.6.10)
+    capistrano (2.15.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -73,15 +79,12 @@ GEM
       dotenv (= 0.8.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    excon (0.25.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
-    fattr (2.2.1)
     ffi (1.9.0)
-    heroku-api (0.3.15)
-      excon (~> 0.25.1)
+    highline (1.6.20)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -108,11 +111,20 @@ GEM
     mime-types (1.23)
     multi_json (1.8.1)
     net-ldap (0.3.1)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     orm_adapter (0.4.0)
     pg (0.16.0)
     polyamorous (0.6.3)
       activerecord (>= 3.0)
     polyglot (0.3.3)
+    puma (2.6.0)
+      rack (>= 1.1, < 2.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -145,15 +157,11 @@ GEM
       json (~> 1.4)
     ref (1.0.5)
     rolify (3.2.0)
-    rush (0.6.8)
-      session
     sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    session (3.1.0)
-      fattr
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -189,18 +197,15 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.3)
       rack (>= 1.0)
-    workless (1.1.3)
-      delayed_job (>= 2.0.7)
-      heroku-api
-      rails
-      rush
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   cancan
+  capistrano (~> 2.0)
   coffee-rails (~> 3.2.1)
+  daemons
   delayed_job_active_record
   devise
   devise_sip2_authenticatable!
@@ -211,6 +216,7 @@ DEPENDENCIES
   less-rails
   net-ldap
   pg
+  puma
   rails (= 3.2.13)
   rails-dev-boost!
   rolify
@@ -221,4 +227,3 @@ DEPENDENCIES
   thin
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
-  workless (~> 1.1.3)

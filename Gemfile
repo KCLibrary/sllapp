@@ -39,7 +39,9 @@ gem 'squeel'
 gem 'factory_girl'
 gem 'net-ldap'
 gem 'delayed_job_active_record'
-gem "workless", "~> 1.1.3"
+gem 'puma'
+gem 'capistrano', '~> 2.0', :require => false
+gem 'daemons'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
