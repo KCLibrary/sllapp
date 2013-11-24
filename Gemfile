@@ -41,7 +41,7 @@ gem 'delayed_job_active_record'
 gem 'puma'
 gem 'capistrano', '~> 2.0', :require => false
 gem 'daemons'
-gem 'dotenv-rails'
+# gem 'dotenv-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

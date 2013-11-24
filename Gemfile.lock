@@ -74,9 +74,6 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    dotenv (0.8.0)
-    dotenv-rails (0.8.0)
-      dotenv (= 0.8.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -209,7 +206,6 @@ DEPENDENCIES
   delayed_job_active_record
   devise
   devise_sip2_authenticatable!
-  dotenv-rails
   factory_girl
   jquery-rails
   jquery-ui-rails

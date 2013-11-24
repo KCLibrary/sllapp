@@ -14,7 +14,13 @@ module Sllapp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-
+    config.before_configuration do
+      env_file = File.join(Rails.root, '.env')
+      YAML.load(File.open(env_file)).each do |key, value|
+        puts key.to_s
+        ENV[key.to_s] = value
+      end if File.exists?(env_file)
+    end
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W(#{config.root}/lib/)
 
