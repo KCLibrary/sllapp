@@ -1,6 +1,7 @@
 require 'bundler/capistrano'
 require 'puma/capistrano'
 require "delayed/recipes"  
+require "dotenv/capistrano"
 
 set :rails_env, "production"
 
