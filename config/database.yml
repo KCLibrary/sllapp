@@ -17,6 +17,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: <%= ENV['prod_db_database'] %>
   username: <%= ENV['prod_db_username'] %>
   password: <%= ENV['prod_db_password'] %>
