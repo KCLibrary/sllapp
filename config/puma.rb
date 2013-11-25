@@ -1,7 +1,7 @@
 SOCK =      'unix:///tmp/sockets_sllapp.sock'
 CTL_SOCK =  'unix:///tmp/sockets_sllapp_ctl.sock'
 
-environment ENV['RAILS_ENV'] || "development"
+# environment ENV['RAILS_ENV'] || "development"
 pidfile     "tmp/sockets/puma.pid"
 state_path  "tmp/sockets/puma.state"
 
