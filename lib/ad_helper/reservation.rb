@@ -68,7 +68,7 @@ module AdHelper
     end
     
     def logon_hours_formatted(b = '1')
-      _v = ad_user.current_logon_hours.chars.fill(*fill_values(b)).join
+      _v = ad_user.current_logon_hours.chars.to_a.fill(*fill_values(b)).join
       Connector.bin_to_code _v
     end
   
