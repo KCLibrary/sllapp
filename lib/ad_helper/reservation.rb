@@ -64,7 +64,7 @@ module AdHelper
     end
     
     def fill_values(b)
-      [b, fill_index, app_reservation.length]
+      [b, fill_index, app_reservation.duration]
     end
     
     def logon_hours_formatted(b = '1')

@@ -26,9 +26,8 @@ class Reservation < ActiveRecord::Base
       (start_datetime < et) & (end_datetime > st)
     }
   }
-  
-  
-  def length
+    
+  def duration
     ((end_datetime - start_datetime) / 1.day).to_i
   end
   
