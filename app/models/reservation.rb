@@ -28,7 +28,7 @@ class Reservation < ActiveRecord::Base
   }
     
   def duration
-    ((end_datetime - start_datetime) / 1.day).to_i
+    ((end_datetime - start_datetime) / 1.hour).to_i
   end
   
   def queue_name
