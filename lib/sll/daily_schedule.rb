@@ -6,16 +6,16 @@ module Sll
     attr_accessor :date
 
     def initialize(date = nil)
-      @date = (date || Time.now).to_date
+      @date = (date || Time.zone.now).to_date
     end
 
     def date_given_is_today?
-      @date == Time.now.to_date
+      @date == Time.zone.now.to_date
     end
 
     def start_datetime
       @start_datetime ||= if date_given_is_today? 
-        Time.now.at_beginning_of_hour
+        Time.zone.now.at_beginning_of_hour
       else @date.at_beginning_of_day end
     end
 

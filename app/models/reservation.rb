@@ -56,7 +56,7 @@ class Reservation < ActiveRecord::Base
   private
     
   def end_datetime_must_be_in_future
-    if self.end_datetime <= Time.now
+    if self.end_datetime <= Time.zone.now
       errors.add(:base, 'Reservations must end in the future')
     end
   end
