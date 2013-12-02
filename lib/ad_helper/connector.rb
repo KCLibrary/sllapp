@@ -25,6 +25,12 @@ module AdHelper
       end
     end
     
+    def self.remote_users_security_group
+      @remote_users_security_group ||= begin
+        "CN=SLL - Remote Desktop Users,OU=Security,OU=SLL - Groups,#{base}"
+      end
+    end
+    
     def self.connection_settings
       config.slice(:host, :port, :base).merge({
         :encryption => ENCRYPTION,

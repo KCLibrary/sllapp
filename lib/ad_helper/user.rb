@@ -47,6 +47,7 @@ module AdHelper
     
     def add_to_remote_users_group
       conn.add_attribute Connector.remote_users_group, :member, dn
+      conn.add_attribute Connector.remote_users_security_group, :member, dn
     end
     
     def create
