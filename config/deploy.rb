@@ -33,6 +33,15 @@ after "deploy:stop",    "delayed_job:stop"
 after "deploy:start",   "delayed_job:start"
 after "deploy:restart", "delayed_job:restart"
 
+after "deploy:update", "deploy:env_symlink"
+
+namespace :deploy do
+  task :env_symlink do
+    env_file = File.join(shared_path, 'system/.env')
+    env_link = File.join(current_path, '.env')
+    run "ln -s #{env_file} #{env_link}"
+  end
+end
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
