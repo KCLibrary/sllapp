@@ -1,0 +1,23 @@
+<div class="sll-navbar navbar navbar-static-top">
+  <div class="container">
+    
+    <ul class="nav navbar-nav">      
+      <%= nav_elem "Home", root_path %>
+      <%= nav_elem "Make a Reservation", available_reservations_path({
+        :date => params[:date]
+      }), available_reservations_path %>
+      <%= nav_elem "Available Software", software_path %>
+      <%= nav_elem "How Does It Work?", about_path %>
+      <% if user_signed_in? %>
+        <%= nav_elem "Check Existing Reservations", reservations_path %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, {
+            :method => :delete
+          } %>
+        </li>
+      <% else %>
+        <%= nav_elem "Sign in", new_user_session_path %>
+      <% end %>
+    </ul>
+  </div>
+</div>

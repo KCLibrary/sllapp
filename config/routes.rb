@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :reservations, :except => [:new, :edit, :show, :update]
   
   get 'rdp_file', :to => 'static#rdp_file', :as => 'rdp_file'
+  get 'software', :to => 'static#software'
+  get 'about', :to => 'static#about'
   
   root :to => 'reservations#available'
 

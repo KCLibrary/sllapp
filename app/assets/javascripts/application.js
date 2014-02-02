@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery.ui.all
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap
 //= require eternicode-bootstrap-datepicker/bootstrap-datepicker.js
 //= require custom.js

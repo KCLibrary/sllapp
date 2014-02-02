@@ -1,14 +1,13 @@
 <%= render 'shared/intro_unit' if current_page?(root_path) %>
-<%= render 'shared/sll_nav', :active => { :reservations => 'active' } %>
 <div class="page-header">
   <h4>Pick a date and time to use software</h4>
 </div>
 <div class="row">
-  <div class="span6 sll-dates">
+  <div class="col-md-6 sll-dates">
     <%= render 'available_date_changer', :schedule => @schedule %>
-    <hr class="visible-phone"/>
+    <hr class="visible-xs-sm"/>
   </div>  
-  <div class="span6">
+  <div class="col-md-6">
     <%= render 'available_date_form', :schedule => @schedule %>    
   </div>
 </div>

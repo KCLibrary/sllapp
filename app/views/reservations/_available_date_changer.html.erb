@@ -1,6 +1,12 @@
 <div class="sll-date-fields">
-  <%= form_tag available_reservations_path, :method => :post, :class => "form-inline" do %>
-    <%= select_date(schedule.date, :prefix => 'sll-date') %>
+  <%= form_tag available_reservations_path, {
+    :method => :post, :class => "form-inline"
+  } do %>
+    <%= select_date(schedule.date, {
+      :prefix => 'sll-date' 
+    }, {
+      :class => 'form-control'
+    }) %>
     <button class="btn">Update</button>
   <% end %>
 </div>

@@ -46,6 +46,8 @@ GEM
     arel (3.0.2)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
+    bootstrap-sass (3.1.0.0)
+      sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.10)
     capistrano (2.15.5)
@@ -61,7 +63,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    commonjs (0.2.6)
     daemons (1.1.9)
     delayed_job (4.0.0)
       activesupport (>= 3.0, < 4.1)
@@ -92,12 +93,6 @@ GEM
       jquery-rails
       railties (>= 3.1.0)
     json (1.8.0)
-    less (2.3.2)
-      commonjs (~> 0.2.6)
-    less-rails (2.3.3)
-      actionpack (>= 3.1)
-      less (~> 2.3.1)
-    libv8 (3.11.8.17)
     listen (1.2.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -152,7 +147,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    ref (1.0.5)
     rolify (3.2.0)
     sass (3.2.10)
     sass-rails (3.2.6)
@@ -169,9 +163,6 @@ GEM
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       polyamorous (~> 0.6.0)
-    therubyracer (0.11.4)
-      libv8 (~> 3.11.8.12)
-      ref
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -183,11 +174,6 @@ GEM
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
-    twitter-bootstrap-rails (2.2.7)
-      actionpack (>= 3.1)
-      execjs
-      rails (>= 3.1)
-      railties (>= 3.1)
     tzinfo (0.3.37)
     uglifier (2.1.2)
       execjs (>= 0.3.0)
@@ -199,6 +185,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   cancan
   capistrano (~> 2.0)
   coffee-rails (~> 3.2.1)
@@ -209,7 +196,6 @@ DEPENDENCIES
   factory_girl
   jquery-rails
   jquery-ui-rails
-  less-rails
   net-ldap
   pg
   puma
@@ -219,7 +205,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   squeel
-  therubyracer
   thin
-  twitter-bootstrap-rails
   uglifier (>= 1.0.3)

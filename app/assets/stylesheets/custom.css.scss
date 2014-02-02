@@ -1,0 +1,144 @@
+@import url('//fonts.googleapis.com/css?family=Lato');
+@import url('//fonts.googleapis.com/css?family=Play');
+
+$white: #fff;
+$sll-navbar-color: #548db0;
+$font-family-sans-serif: 'Lato', sans-serif;
+$yellow: #B0A553;
+$sll-gray: #58585b;
+
+$grid-gutter-width: 30px !default;
+
+$container-desktop: ((940px + $grid-gutter-width)) !default;
+$container-large-desktop: $container-desktop;
+
+@mixin btn-styles($btn-color: #555) {
+  background-color: $btn-color;
+  border-color: darken($btn-color, 14%);
+
+  &:hover,
+  &:focus  {
+    background-color: darken($btn-color, 12%);
+    background-position: 0 -15px;
+  }
+
+  &:active,
+  &.active {
+    background-color: darken($btn-color, 12%);
+    border-color: darken($btn-color, 14%);
+  }
+}
+
+@import "bootstrap";
+// @import "bootstrap/theme";
+@import "datepicker";
+
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6, 
+.sll-navbar ul.nav > li > a {
+  font-family: 'Play', sans-serif;
+  text-transform: uppercase;
+}
+
+.sll-post {
+  .btn { @include btn-styles($btn-color: lighten($yellow, 20%)); }
+  text-align:center;
+}
+
+.table-div {
+  display: table;
+  width: 100%;
+  > div { display: table-cell; vertical-align: middle; }
+}
+
+.table-div-three {
+  @extend .table-div;
+  text-align: center;
+  div:first-child { width: 33%; text-align: left; }
+  div:last-child { width: 33%; text-align: right; }
+}
+
+footer .table-div {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.sll-header {
+  margin-bottom: 15px;
+  img { @extend .img-responsive; }
+  .lib-logo-last {
+    @media (min-width: $screen-md-min) {
+      margin-left: 40px;
+    }
+  }  
+}
+
+.vertical-center {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.sll-main-img { 
+  @extend .img-thumbnail; 
+  @extend .center-block;
+  max-width: 100%; 
+  max-height: 250px;
+}
+
+.sll-navbar {
+  border-bottom: none;
+  background-color: $sll-navbar-color;
+  // $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075);
+  $shadow: 2px 4px 6px rgba(0,0,0,.5);
+  @include box-shadow($shadow);
+  .navbar-nav > .active > a {
+    // @include box-shadow(inset 0 3px 9px rgba(0,0,0,.2));
+    background-color: darken($sll-navbar-color, 10%);
+  }
+  .navbar-nav > li > a { 
+    color: $white; text-shadow: none; 
+    &:hover { background-color: lighten($sll-navbar-color, 10%); }
+  }
+}
+
+.sll-dates { 
+  text-align: center; 
+  box-sizing: border-box; 
+  border-right: 1px solid $gray-lighter; 
+}
+
+.sll-time-fields {
+  ul > li:first-child div.checkbox { margin-top: 0; }
+  .checkbox { width: 160px; }
+}
+
+.sll-light-gray {
+  color: $gray-light;
+}
+
+.visible-xs-sm {
+  display: block !important;
+  @media (min-width: $screen-sm-min) {
+    display: none !important;
+  }
+}
+
+.columns {
+  @include content-columns(2);
+}
+
+.footer-img {
+  position: relative;
+  a { position: absolute; top: 0; bottom: 0; }
+  .mozilla-link { left: 0; width: 25%; }
+  .kcpl-link { left: 25%; width: 50%; }
+  .arsalon-link { right: 0; width: 25%; }
+}
+/*
+.page-header {
+  padding-bottom: 9px;
+  margin: 20px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+*/

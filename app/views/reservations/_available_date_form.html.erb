@@ -1,37 +1,31 @@
 <%= form_tag new_reservation_path, :method => :post do %>
-  <div class="row">
-    <div class="span3">
-      <div><p>Reserve up to three hours at a time</p></div>
-      <div class="sll-times">
-        <div class="sll-time-fields">
-          <ul class="unstyled">
-            <% schedule.availability_blocks.each_with_index do |ts, i| %>
-              <li>               
-                <% ts.resources.each do |resource| %>
-                  <%= content_tag :label, :class => 'checkbox inline', 
-                    :title => ts.start_hour.to_s do %>
-                    <%= check_box_tag "reservation-times[#{resource.id}][]", 
-                      ts.start_hour.to_formatted_s, false, {
-                        :id => "reservation-times_#{resource.id}_#{i}",
-                        :disabled => !resource.available
-                      } %>
-                  <% end %>
-                <% end %>
-                  <label class="checkbox inline time-helper">
-                    <span><%= ts.start_hour.strftime("%I:%M%p") %></span>
-                    <span class="sll-light-gray">
-                      - <%= ts.end_hour.strftime("%I:%M%p") %>
-                    </span>
-                  </label>       
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div> <!-- end sll-times -->
+  <div class="sll-times">
+    <div class="sll-time-fields columns">
+      <ul class="list-unstyled">
+        <% schedule.availability_blocks.each_with_index do |ts, i| %>
+          <li>
+            <div class="checkbox center-block">             
+              <% ts.resources.each do |resource| %>
+                <%= check_box_tag "reservation-times[#{resource.id}][]", 
+                  ts.start_hour.to_formatted_s, false, {
+                    :id => "reservation-times_#{resource.id}_#{i}",
+                    :disabled => !resource.available
+                  } %>
+              <% end %>
+              <label class="time-helper">
+                <span><%= ts.start_hour.strftime("%I:%M%p") %></span>
+                <span class="sll-light-gray">
+                  - <%= ts.end_hour.strftime("%I:%M%p") %>
+                </span>
+              </label>
+            </div>    
+          </li>
+        <% end %>
+      </ul>
     </div>
-    <hr class="visible-phone"/>
-    <div class="span3 sll-post">
-      <button class="btn btn-success btn-large">Make Reservation</button>
+    <hr/>
+    <div class="sll-post">
+      <button class="btn btn-large">Make Reservation</button>
     </div>
   </div>
 <% end %>

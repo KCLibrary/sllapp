@@ -1,8 +1,6 @@
-<%= render 'shared/sll_nav', :active => {:existing => 'active'} %>
 <div class="page-header">
   <h4>Listing reservations</h4>
 </div>
-
 <table class="table table-striped">
   <tr>
     <th>Date</th>
@@ -22,17 +20,18 @@
           <%= raw(reservation.time_slot_dashed_formatted_string) %>
         </td>
         <td>
-          <%= link_to 'Destroy', reservation, {
+          <%= link_to 'Delete', reservation, {
             :method => :delete, 
             :data => { :confirm => 'Are you sure?' }
           } %>
         </td>
         <td>
-          <%= link_to "Download", rdp_file_path %>
+          <%= link_to "Download", rdp_file_path, :data => {
+            :confirm => "Please use your library card number and PIN as username and password when logging in to the remote desktop"
+          } %>
         </td>
       </tr>
     <% end %>
   <% end %>  
 </table>
-
-<%= link_to 'New Reservation', available_reservations_path %>
+<%= link_to 'New Reservation', available_reservations_path, :class => 'btn btn-primary' %>
