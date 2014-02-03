@@ -17,5 +17,8 @@ $(document).ready(function() {
     window.location.href = base_uri + formatDateString(e.date);
   });
   
+  $('.time-helper').on('click', function(e) {
+    $(this).closest('li').find('[type="checkbox"]').first().trigger('click');
+  })
 
 });
