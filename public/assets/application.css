@@ -448,7 +448,7 @@ img {
 }
 
 /* line 81, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_scaffolding.scss */
-.img-responsive, .sll-header img {
+.img-responsive, .sll-header img, .footer-logos img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -460,7 +460,7 @@ img {
 }
 
 /* line 93, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_scaffolding.scss */
-.img-thumbnail, .sll-main-img {
+.img-thumbnail, .footer-logos img, .sll-main-img {
   padding: 4px;
   line-height: 1.428571429;
   background-color: white;
@@ -7924,72 +7924,96 @@ footer .table-div, footer .table-div-three {
 }
 
 /* line 76, ../../app/assets/stylesheets/custom.css.scss */
+.footer-logos {
+  display: table;
+  margin: auto;
+}
+/* line 81, ../../app/assets/stylesheets/custom.css.scss */
+.footer-logos .arsalon img, .footer-logos .mozilla img {
+  background-color: #333333;
+}
+/* line 83, ../../app/assets/stylesheets/custom.css.scss */
+.footer-logos p {
+  margin: 0;
+}
+/* line 84, ../../app/assets/stylesheets/custom.css.scss */
+.footer-logos .padded {
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 15px;
+}
+/* line 88, ../../app/assets/stylesheets/custom.css.scss */
+.footer-logos .padded:last {
+  padding-right: 0;
+}
+
+/* line 93, ../../app/assets/stylesheets/custom.css.scss */
 .vertical-center {
   display: inline-block;
   vertical-align: middle;
   float: none;
 }
 
-/* line 82, ../../app/assets/stylesheets/custom.css.scss */
+/* line 99, ../../app/assets/stylesheets/custom.css.scss */
 .sll-main-img {
   max-width: 100%;
   max-height: 250px;
 }
 
-/* line 89, ../../app/assets/stylesheets/custom.css.scss */
+/* line 106, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar {
   border-bottom: none;
   background-color: #548db0;
   -webkit-box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
 }
-/* line 95, ../../app/assets/stylesheets/custom.css.scss */
+/* line 112, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > .active > a {
   background-color: #42728f;
 }
-/* line 99, ../../app/assets/stylesheets/custom.css.scss */
+/* line 116, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > li > a {
   color: white;
   text-shadow: none;
 }
-/* line 101, ../../app/assets/stylesheets/custom.css.scss */
+/* line 118, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > li > a:hover {
   background-color: #77a4c0;
 }
 
-/* line 105, ../../app/assets/stylesheets/custom.css.scss */
+/* line 122, ../../app/assets/stylesheets/custom.css.scss */
 .sll-dates {
   text-align: center;
   box-sizing: border-box;
   border-right: 1px solid #eeeeee;
 }
 
-/* line 112, ../../app/assets/stylesheets/custom.css.scss */
+/* line 129, ../../app/assets/stylesheets/custom.css.scss */
 .sll-time-fields ul > li:first-child div.checkbox {
   margin-top: 0;
 }
-/* line 113, ../../app/assets/stylesheets/custom.css.scss */
+/* line 130, ../../app/assets/stylesheets/custom.css.scss */
 .sll-time-fields .checkbox {
   width: 160px;
 }
 
-/* line 116, ../../app/assets/stylesheets/custom.css.scss */
+/* line 133, ../../app/assets/stylesheets/custom.css.scss */
 .sll-light-gray {
   color: #999999;
 }
 
-/* line 120, ../../app/assets/stylesheets/custom.css.scss */
+/* line 137, ../../app/assets/stylesheets/custom.css.scss */
 .visible-xs-sm {
   display: block !important;
 }
 @media (min-width: 768px) {
-  /* line 120, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 137, ../../app/assets/stylesheets/custom.css.scss */
   .visible-xs-sm {
     display: none !important;
   }
 }
 
-/* line 127, ../../app/assets/stylesheets/custom.css.scss */
+/* line 144, ../../app/assets/stylesheets/custom.css.scss */
 .columns {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -7999,27 +8023,27 @@ footer .table-div, footer .table-div-three {
   column-gap: 30px;
 }
 
-/* line 131, ../../app/assets/stylesheets/custom.css.scss */
+/* line 148, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img {
   position: relative;
 }
-/* line 133, ../../app/assets/stylesheets/custom.css.scss */
+/* line 150, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img a {
   position: absolute;
   top: 0;
   bottom: 0;
 }
-/* line 134, ../../app/assets/stylesheets/custom.css.scss */
+/* line 151, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img .mozilla-link {
   left: 0;
   width: 25%;
 }
-/* line 135, ../../app/assets/stylesheets/custom.css.scss */
+/* line 152, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img .kcpl-link {
   left: 25%;
   width: 50%;
 }
-/* line 136, ../../app/assets/stylesheets/custom.css.scss */
+/* line 153, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img .arsalon-link {
   right: 0;
   width: 25%;
