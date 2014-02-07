@@ -73,6 +73,23 @@ footer .table-div {
   }  
 }
 
+.footer-logos {
+  display: table;
+  margin: auto; 
+  img { @extend .img-responsive; @extend .img-thumbnail; }
+  .arsalon, .mozilla { 
+    img { background-color: $gray-dark; }
+  }
+  p { margin: 0; }
+  .padded {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 15px;
+    &:last { padding-right: 0; }
+  }
+}
+
+
 .vertical-center {
   display: inline-block;
   vertical-align: middle;
