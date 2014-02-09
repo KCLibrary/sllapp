@@ -3,7 +3,7 @@ class ReservationMailer < ActionMailer::Base
   default :from => "kardeiz@gmail.com"
   
   def notification(reservation, user)
-    rdp_file = open(rdp_file_path) rescue %Q{
+    rdp_file = %Q{
       full address:s:lendinglibrary1.arsalon.net\nprompt for credentials:i:1
     }.strip
     attachments['sll.rdp'] = rdp_file
