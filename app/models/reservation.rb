@@ -19,9 +19,7 @@ class Reservation < ActiveRecord::Base
   delegate :uid, :to => :user, :allow_nil => true, :prefix => true
   
   after_save :create_active_directory_reservation
-  after_save do
-    ReservationMailer.notification(self, self.user).deliver
-  end
+
   after_destroy :destroy_active_directory_reservation
  
   scope :overlap, lambda {|st, et|
