@@ -67,7 +67,7 @@ Sllapp::Application.configure do
     port:                 587,
     domain:               '162.243.100.39',
     user_name:            'kcplsllapp@gmail.com',
-    password:             ENV['ad_password'],
+    password:             'kcpl9221',
     authentication:       'plain',
     enable_starttls_auto: true  }
 
