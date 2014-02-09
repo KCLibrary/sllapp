@@ -40,6 +40,8 @@ h1, h2, h3, h4, h5, h6,
   text-transform: uppercase;
 }
 
+.alert-error { @extend .alert-danger; }
+
 .sll-post {
   .btn { @include btn-styles($btn-color: lighten($yellow, 20%)); }
   text-align:center;

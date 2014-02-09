@@ -5979,17 +5979,17 @@ a.thumbnail.active {
 }
 
 /* line 65, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_alerts.scss */
-.alert-danger {
+.alert-danger, .alert-error {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442;
 }
 /* line 432, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.alert-danger hr {
+.alert-danger hr, .alert-error hr {
   border-top-color: #e4b9c0;
 }
 /* line 435, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.alert-danger .alert-link {
+.alert-danger .alert-link, .alert-error .alert-link {
   color: #843534;
 }
 
@@ -7860,11 +7860,11 @@ h1, h2, h3, h4, h5, h6,
   text-transform: uppercase;
 }
 
-/* line 43, ../../app/assets/stylesheets/custom.css.scss */
+/* line 45, ../../app/assets/stylesheets/custom.css.scss */
 .sll-post {
   text-align: center;
 }
-/* line 44, ../../app/assets/stylesheets/custom.css.scss */
+/* line 46, ../../app/assets/stylesheets/custom.css.scss */
 .sll-post .btn {
   background-color: #d0ca99;
   border-color: #bab068;
@@ -7880,140 +7880,140 @@ h1, h2, h3, h4, h5, h6,
   border-color: #bab068;
 }
 
-/* line 48, ../../app/assets/stylesheets/custom.css.scss */
+/* line 50, ../../app/assets/stylesheets/custom.css.scss */
 .table-div, .table-div-three {
   display: table;
   width: 100%;
 }
-/* line 51, ../../app/assets/stylesheets/custom.css.scss */
+/* line 53, ../../app/assets/stylesheets/custom.css.scss */
 .table-div > div, .table-div-three > div {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 54, ../../app/assets/stylesheets/custom.css.scss */
+/* line 56, ../../app/assets/stylesheets/custom.css.scss */
 .table-div-three {
   text-align: center;
 }
-/* line 57, ../../app/assets/stylesheets/custom.css.scss */
+/* line 59, ../../app/assets/stylesheets/custom.css.scss */
 .table-div-three div:first-child {
   width: 33%;
   text-align: left;
 }
-/* line 58, ../../app/assets/stylesheets/custom.css.scss */
+/* line 60, ../../app/assets/stylesheets/custom.css.scss */
 .table-div-three div:last-child {
   width: 33%;
   text-align: right;
 }
 
-/* line 61, ../../app/assets/stylesheets/custom.css.scss */
+/* line 63, ../../app/assets/stylesheets/custom.css.scss */
 footer .table-div, footer .table-div-three {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-/* line 66, ../../app/assets/stylesheets/custom.css.scss */
+/* line 68, ../../app/assets/stylesheets/custom.css.scss */
 .sll-header {
   margin-bottom: 15px;
 }
 @media (min-width: 992px) {
-  /* line 69, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 71, ../../app/assets/stylesheets/custom.css.scss */
   .sll-header .lib-logo-last {
     margin-left: 40px;
   }
 }
 
-/* line 76, ../../app/assets/stylesheets/custom.css.scss */
+/* line 78, ../../app/assets/stylesheets/custom.css.scss */
 .footer-logos {
   display: table;
   margin: auto;
 }
-/* line 81, ../../app/assets/stylesheets/custom.css.scss */
+/* line 83, ../../app/assets/stylesheets/custom.css.scss */
 .footer-logos .arsalon img, .footer-logos .mozilla img {
   background-color: #333333;
 }
-/* line 83, ../../app/assets/stylesheets/custom.css.scss */
+/* line 85, ../../app/assets/stylesheets/custom.css.scss */
 .footer-logos p {
   margin: 0;
 }
-/* line 84, ../../app/assets/stylesheets/custom.css.scss */
+/* line 86, ../../app/assets/stylesheets/custom.css.scss */
 .footer-logos .padded {
   display: table-cell;
   vertical-align: middle;
   padding-right: 15px;
 }
-/* line 88, ../../app/assets/stylesheets/custom.css.scss */
+/* line 90, ../../app/assets/stylesheets/custom.css.scss */
 .footer-logos .padded:last {
   padding-right: 0;
 }
 
-/* line 93, ../../app/assets/stylesheets/custom.css.scss */
+/* line 95, ../../app/assets/stylesheets/custom.css.scss */
 .vertical-center {
   display: inline-block;
   vertical-align: middle;
   float: none;
 }
 
-/* line 99, ../../app/assets/stylesheets/custom.css.scss */
+/* line 101, ../../app/assets/stylesheets/custom.css.scss */
 .sll-main-img {
   max-width: 100%;
   max-height: 250px;
 }
 
-/* line 106, ../../app/assets/stylesheets/custom.css.scss */
+/* line 108, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar {
   border-bottom: none;
   background-color: #548db0;
   -webkit-box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
 }
-/* line 112, ../../app/assets/stylesheets/custom.css.scss */
+/* line 114, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > .active > a {
   background-color: #42728f;
 }
-/* line 116, ../../app/assets/stylesheets/custom.css.scss */
+/* line 118, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > li > a {
   color: white;
   text-shadow: none;
 }
-/* line 118, ../../app/assets/stylesheets/custom.css.scss */
+/* line 120, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > li > a:hover {
   background-color: #77a4c0;
 }
 
-/* line 122, ../../app/assets/stylesheets/custom.css.scss */
+/* line 124, ../../app/assets/stylesheets/custom.css.scss */
 .sll-dates {
   text-align: center;
   box-sizing: border-box;
   border-right: 1px solid #eeeeee;
 }
 
-/* line 129, ../../app/assets/stylesheets/custom.css.scss */
+/* line 131, ../../app/assets/stylesheets/custom.css.scss */
 .sll-time-fields ul > li:first-child div.checkbox {
   margin-top: 0;
 }
-/* line 130, ../../app/assets/stylesheets/custom.css.scss */
+/* line 132, ../../app/assets/stylesheets/custom.css.scss */
 .sll-time-fields .checkbox {
   width: 160px;
 }
 
-/* line 133, ../../app/assets/stylesheets/custom.css.scss */
+/* line 135, ../../app/assets/stylesheets/custom.css.scss */
 .sll-light-gray {
   color: #999999;
 }
 
-/* line 137, ../../app/assets/stylesheets/custom.css.scss */
+/* line 139, ../../app/assets/stylesheets/custom.css.scss */
 .visible-xs-sm {
   display: block !important;
 }
 @media (min-width: 768px) {
-  /* line 137, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 139, ../../app/assets/stylesheets/custom.css.scss */
   .visible-xs-sm {
     display: none !important;
   }
 }
 
-/* line 144, ../../app/assets/stylesheets/custom.css.scss */
+/* line 146, ../../app/assets/stylesheets/custom.css.scss */
 .columns {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -8023,27 +8023,27 @@ footer .table-div, footer .table-div-three {
   column-gap: 30px;
 }
 
-/* line 148, ../../app/assets/stylesheets/custom.css.scss */
+/* line 150, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img {
   position: relative;
 }
-/* line 150, ../../app/assets/stylesheets/custom.css.scss */
+/* line 152, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img a {
   position: absolute;
   top: 0;
   bottom: 0;
 }
-/* line 151, ../../app/assets/stylesheets/custom.css.scss */
+/* line 153, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img .mozilla-link {
   left: 0;
   width: 25%;
 }
-/* line 152, ../../app/assets/stylesheets/custom.css.scss */
+/* line 154, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img .kcpl-link {
   left: 25%;
   width: 50%;
 }
-/* line 153, ../../app/assets/stylesheets/custom.css.scss */
+/* line 155, ../../app/assets/stylesheets/custom.css.scss */
 .footer-img .arsalon-link {
   right: 0;
   width: 25%;
