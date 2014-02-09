@@ -16,6 +16,7 @@ module Sll
     end
     
     def resource_available?(resource)
+      return false if start_hour < (Time.now - 1.hour)
       resource.licenses > count_for_resource(resource)
     end    
     

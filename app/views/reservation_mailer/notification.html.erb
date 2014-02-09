@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>You have created a reservation for a Software Lending Library session.</p>
+    <table>
+      <tr>
+        <td><%= @reservation.start_date_long_formatted_string %></td>
+        <td>
+          <%= raw(@reservation.time_slot_dashed_formatted_string) %>
+        </td>
+      </tr>
+    </table>
+    <p>To login to the server, download and launch the attached RDP file. Enter your library card number and PIN when prompted for username and password.</p>
+  </body>
+</html>

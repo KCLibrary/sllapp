@@ -9,6 +9,10 @@ module Sll
       @date = (date || Time.zone.now).to_date
     end
 
+    def date_given_is_in_past?
+      @date < Time.zone.now.to_date
+    end
+
     def date_given_is_today?
       @date == Time.zone.now.to_date
     end
