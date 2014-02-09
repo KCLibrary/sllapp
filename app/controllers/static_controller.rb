@@ -5,7 +5,7 @@ class StaticController < ApplicationController
   
   def rdp_file
     contents = %Q{
-      full address:s:lendinglibrary1.arsalon.net\nprompt for credentials:i:1
+      full address:s:lendinglibrary1.arsalon.net\nprompt for credentials:i:1\ndrivestoredirect:s:*
     }.strip
     send_data contents, :filename => 'sll.rdp'
   end
