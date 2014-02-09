@@ -64,9 +64,9 @@ Sllapp::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
-    port:                 587,
+    port:                 465,
     domain:               '162.243.100.39',
-    user_name:            'kcplsllapp',
+    user_name:            'kcplsllapp@gmail.com',
     password:             ENV['ad_password'],
     authentication:       'plain',
     enable_starttls_auto: true  }
