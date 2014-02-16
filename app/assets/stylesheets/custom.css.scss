@@ -33,6 +33,8 @@ $container-large-desktop: $container-desktop;
 // @import "bootstrap/theme";
 @import "datepicker";
 
+$container-large-desktop: $container-desktop;
+
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6, 
 .sll-navbar ul.nav > li > a {
@@ -66,31 +68,74 @@ footer .table-div {
 }
 
 .sll-header {
-  margin-bottom: 15px;
-  img { @extend .img-responsive; }
-  .lib-logo-last {
-    @media (min-width: $screen-md-min) {
-      margin-left: 40px;
+  background-image: image-url("header-bg-2.png");
+  .container {
+    img { @extend .img-responsive; }
+    position: relative;
+    .user-links {
+      font-family: 'Play', sans-serif;
+      font-size: 17px;
+      padding: 0 15px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      a { color: $sll-gray; }
     }
-  }  
-}
-
-.footer-logos {
-  display: table;
-  margin: auto; 
-  img { @extend .img-responsive; @extend .img-thumbnail; }
-  .arsalon, .mozilla { 
-    img { background-color: $gray-dark; }
-  }
-  p { margin: 0; }
-  .padded {
-    display: table-cell;
-    vertical-align: middle;
-    padding-right: 15px;
-    &:last { padding-right: 0; }
   }
 }
 
+.ul-table {
+  @media (min-width: $screen-sm-min) {
+    display: table;
+    width: 100%;
+    > li {
+      float: none; 
+      display: table-cell;
+      text-align: center;
+      &:first-child { text-align: left; }
+      &:last-child { text-align: right; }
+      > a, > span {
+        display: inline-block;
+        font-size: 17px;      
+      }
+    }
+  }
+}
+
+.sll-navbar ul.navbar-nav {
+  @extend .ul-table;
+}
+
+footer {
+  margin-top: 15px;
+  background-color: $sll-gray;
+  color: $white; 
+  font-family: 'Play', sans-serif;
+  text-align: center;
+  img { @extend .img-responsive; margin: 0 auto; }
+  .footer-logos {
+    margin-top: 15px;
+    .lib-logo {
+      img { margin-left: 5px; }
+      font-size: 12px;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+    .sponsor-logos { margin-top: 15px; }
+    .footer-links {
+      margin-top: 15px;
+      @extend .ul-table;
+      li > a, li > span { 
+        font-size: 14px;
+        color: $white;
+      }
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+}
 
 .vertical-center {
   display: inline-block;
@@ -100,9 +145,8 @@ footer .table-div {
 
 .sll-main-img { 
   @extend .img-thumbnail; 
-  @extend .center-block;
-  max-width: 100%; 
-  max-height: 250px;
+  @extend .img-responsive;
+  margin-bottom: 15px;
 }
 
 .sll-navbar {
@@ -147,13 +191,21 @@ footer .table-div {
   @include content-columns(2);
 }
 
-.footer-img {
-  position: relative;
-  a { position: absolute; top: 0; bottom: 0; }
-  .mozilla-link { left: 0; width: 25%; }
-  .kcpl-link { left: 25%; width: 50%; }
-  .arsalon-link { right: 0; width: 25%; }
+.blue-well {
+  @extend .well;
+  background-image: none;
+  background-color: $sll-navbar-color;
 }
+
+.sign-in-well {
+  label { color: $white; }
+  .form-group { margin: 0; }
+  .btn { 
+    margin-top: 25px;
+    @include btn-styles($btn-color: lighten($yellow, 20%)); 
+  }
+}
+
 /*
 .page-header {
   padding-bottom: 9px;

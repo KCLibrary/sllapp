@@ -12,6 +12,7 @@ class Reservation < ActiveRecord::Base
   validate :must_not_exceed_licenses
   validate :length_must_be_less_than_three_hours
   validate :end_datetime_must_be_in_future
+  validate :no_overlapping_sessions_for_a_user
   
   validates :user, :presence => true
   validates :resource, :presence => true
@@ -54,7 +55,16 @@ class Reservation < ActiveRecord::Base
   end
   
   private
-    
+
+  def no_overlapping_sessions_for_a_user
+    if Reservation.where({
+      :resource_id => self.resource_id,
+      :user_id => self.user_id
+    }).overlap(self.start_datetime, self.end_datetime).exists?
+      errors.add(:base, 'You already have a session at that time')
+    end
+  end  
+  
   def end_datetime_must_be_in_future
     if self.end_datetime <= Time.zone.now
       errors.add(:base, 'Reservations must end in the future')

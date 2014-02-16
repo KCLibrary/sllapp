@@ -29419,7 +29419,10 @@ $(document).ready(function() {
   
   $('.time-helper').on('click', function(e) {
     $(this).closest('li').find('[type="checkbox"]').first().trigger('click');
-  })
+  });
+
+
+  
 
 });
 // This is a manifest file that'll be compiled into application.js, which will include all the files

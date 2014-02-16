@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'software', :to => 'static#software'
   get 'about', :to => 'static#about'
   
-  root :to => 'reservations#available'
+  root :to => 'static#home'
 
 
 

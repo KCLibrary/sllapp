@@ -21,21 +21,11 @@
   <body>
     <%= render 'layouts/header' %>
     <%= render 'layouts/navbar' %>
-    <div class="container">
+    <div class="container main">
       <%= bootstrap_flash %>
       <%= yield %>
-      <hr/>
-      <footer>
-        <%= render 'layouts/logos' %>
-        <div class="table-div table-div-three">
-          <div><span>&copy; Kansas City Public Library 2013</span></div>
-          <div><a href="#">Contact</a></div>
-          <div><a href="#">Find out how to start a software lending library in your community</a></div>
-        </div>
-        
-      </footer>
-
     </div> <!-- /container -->
+    <%= render 'layouts/footer' %>
     <%= javascript_include_tag "application" %>
 
   </body>

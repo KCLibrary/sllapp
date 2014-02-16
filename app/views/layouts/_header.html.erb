@@ -1,10 +1,13 @@
 <div class="sll-header">
   <div class="container">
-    <div class="vertical-center">
-      <%= image_tag 'SLL_site_logo_header.png' %>
-    </div>
-    <div class="vertical-center lib-logo-last">
-      <%= image_tag 'SLL_site_KCPL_header.png' %>
+    <%= image_tag "sll-logo-215-3.png" %>
+    <div class="user-links">
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+      <% end %> | 
+      <%= link_to "My reservations", reservations_path %>
     </div>
   </div>
 </div>

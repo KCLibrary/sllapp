@@ -1,12 +1,12 @@
 <div class="page-header">
-  <h4>Listing reservations</h4>
+  <h4>My reservations</h4>
 </div>
 <table class="table table-striped">
   <tr>
     <th>Date</th>
     <th>Time</th>
     <th>Options</th>
-    <th>RDP file</th>
+    <th>Session File</th>
   </tr>
   <% if @reservations.empty? %>
     <tr><td colspan="4">There's nothing here.</td></tr>
@@ -26,7 +26,7 @@
           } %>
         </td>
         <td>
-          <%= link_to "Download", rdp_file_path, :data => {
+          <%= link_to "Begin Session", rdp_file_path, :data => {
             :confirm => "Please use your library card number and PIN as username and password when logging in to the remote desktop"
           } %>
         </td>

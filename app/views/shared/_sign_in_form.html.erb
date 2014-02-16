@@ -1,0 +1,24 @@
+<div class="blue-well sign-in-well">
+  <%= form_for(resource, {
+    :as => resource_name, 
+    :url => session_path(resource_name)
+  }) do |f| %>  
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= f.label :uid, "Library card number" %>  
+          <%= f.text_field :uid, :autofocus => true, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= f.label :password, "PIN" %>
+          <%= f.password_field :password, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <%= f.submit "Sign in", :class => 'btn' %>
+      </div>
+    </div>
+  <% end %>
+</div>

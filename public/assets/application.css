@@ -448,7 +448,7 @@ img {
 }
 
 /* line 81, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_scaffolding.scss */
-.img-responsive, .sll-header img, .footer-logos img {
+.img-responsive, .sll-header .container img, footer img, .sll-main-img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -460,7 +460,7 @@ img {
 }
 
 /* line 93, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_scaffolding.scss */
-.img-thumbnail, .footer-logos img, .sll-main-img {
+.img-thumbnail, .sll-main-img {
   padding: 4px;
   line-height: 1.428571429;
   background-color: white;
@@ -6684,7 +6684,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 /* line 7, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_wells.scss */
-.well {
+.well, .blue-well {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -6695,7 +6695,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 /* line 15, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_wells.scss */
-.well blockquote {
+.well blockquote, .blue-well blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
 }
@@ -7384,7 +7384,7 @@ button.close {
 }
 
 /* line 12, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_utilities.scss */
-.center-block, .sll-main-img {
+.center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -7852,7 +7852,7 @@ td.visible-print {
   height: 16px;
 }
 
-/* line 38, ../../app/assets/stylesheets/custom.css.scss */
+/* line 40, ../../app/assets/stylesheets/custom.css.scss */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .sll-navbar ul.nav > li > a {
@@ -7860,11 +7860,11 @@ h1, h2, h3, h4, h5, h6,
   text-transform: uppercase;
 }
 
-/* line 45, ../../app/assets/stylesheets/custom.css.scss */
+/* line 47, ../../app/assets/stylesheets/custom.css.scss */
 .sll-post {
   text-align: center;
 }
-/* line 46, ../../app/assets/stylesheets/custom.css.scss */
+/* line 48, ../../app/assets/stylesheets/custom.css.scss */
 .sll-post .btn {
   background-color: #d0ca99;
   border-color: #bab068;
@@ -7880,140 +7880,198 @@ h1, h2, h3, h4, h5, h6,
   border-color: #bab068;
 }
 
-/* line 50, ../../app/assets/stylesheets/custom.css.scss */
+/* line 52, ../../app/assets/stylesheets/custom.css.scss */
 .table-div, .table-div-three {
   display: table;
   width: 100%;
 }
-/* line 53, ../../app/assets/stylesheets/custom.css.scss */
+/* line 55, ../../app/assets/stylesheets/custom.css.scss */
 .table-div > div, .table-div-three > div {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 56, ../../app/assets/stylesheets/custom.css.scss */
+/* line 58, ../../app/assets/stylesheets/custom.css.scss */
 .table-div-three {
   text-align: center;
 }
-/* line 59, ../../app/assets/stylesheets/custom.css.scss */
+/* line 61, ../../app/assets/stylesheets/custom.css.scss */
 .table-div-three div:first-child {
   width: 33%;
   text-align: left;
 }
-/* line 60, ../../app/assets/stylesheets/custom.css.scss */
+/* line 62, ../../app/assets/stylesheets/custom.css.scss */
 .table-div-three div:last-child {
   width: 33%;
   text-align: right;
 }
 
-/* line 63, ../../app/assets/stylesheets/custom.css.scss */
+/* line 65, ../../app/assets/stylesheets/custom.css.scss */
 footer .table-div, footer .table-div-three {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-/* line 68, ../../app/assets/stylesheets/custom.css.scss */
+/* line 70, ../../app/assets/stylesheets/custom.css.scss */
 .sll-header {
-  margin-bottom: 15px;
+  background-image: url(/assets/header-bg-2.png);
 }
-@media (min-width: 992px) {
-  /* line 71, ../../app/assets/stylesheets/custom.css.scss */
-  .sll-header .lib-logo-last {
-    margin-left: 40px;
+/* line 72, ../../app/assets/stylesheets/custom.css.scss */
+.sll-header .container {
+  position: relative;
+}
+/* line 75, ../../app/assets/stylesheets/custom.css.scss */
+.sll-header .container .user-links {
+  font-family: 'Play', sans-serif;
+  font-size: 17px;
+  padding: 0 15px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+/* line 82, ../../app/assets/stylesheets/custom.css.scss */
+.sll-header .container .user-links a {
+  color: #58585b;
+}
+
+@media (min-width: 768px) {
+  /* line 87, ../../app/assets/stylesheets/custom.css.scss */
+  .ul-table, .sll-navbar ul.navbar-nav, footer .footer-logos .footer-links {
+    display: table;
+    width: 100%;
+  }
+  /* line 91, ../../app/assets/stylesheets/custom.css.scss */
+  .ul-table > li, .sll-navbar ul.navbar-nav > li, footer .footer-logos .footer-links > li {
+    float: none;
+    display: table-cell;
+    text-align: center;
+  }
+  /* line 95, ../../app/assets/stylesheets/custom.css.scss */
+  .ul-table > li:first-child, .sll-navbar ul.navbar-nav > li:first-child, footer .footer-logos .footer-links > li:first-child {
+    text-align: left;
+  }
+  /* line 96, ../../app/assets/stylesheets/custom.css.scss */
+  .ul-table > li:last-child, .sll-navbar ul.navbar-nav > li:last-child, footer .footer-logos .footer-links > li:last-child {
+    text-align: right;
+  }
+  /* line 97, ../../app/assets/stylesheets/custom.css.scss */
+  .ul-table > li > a, .sll-navbar ul.navbar-nav > li > a, footer .footer-logos .footer-links > li > a, .ul-table > li > span, .sll-navbar ul.navbar-nav > li > span, footer .footer-logos .footer-links > li > span {
+    display: inline-block;
+    font-size: 17px;
   }
 }
 
-/* line 78, ../../app/assets/stylesheets/custom.css.scss */
-.footer-logos {
-  display: table;
-  margin: auto;
+/* line 109, ../../app/assets/stylesheets/custom.css.scss */
+footer {
+  margin-top: 15px;
+  background-color: #58585b;
+  color: white;
+  font-family: 'Play', sans-serif;
+  text-align: center;
 }
-/* line 83, ../../app/assets/stylesheets/custom.css.scss */
-.footer-logos .arsalon img, .footer-logos .mozilla img {
-  background-color: #333333;
+/* line 115, ../../app/assets/stylesheets/custom.css.scss */
+footer img {
+  margin: 0 auto;
 }
-/* line 85, ../../app/assets/stylesheets/custom.css.scss */
-.footer-logos p {
-  margin: 0;
+/* line 116, ../../app/assets/stylesheets/custom.css.scss */
+footer .footer-logos {
+  margin-top: 15px;
 }
-/* line 86, ../../app/assets/stylesheets/custom.css.scss */
-.footer-logos .padded {
-  display: table-cell;
-  vertical-align: middle;
-  padding-right: 15px;
+/* line 118, ../../app/assets/stylesheets/custom.css.scss */
+footer .footer-logos .lib-logo {
+  font-size: 12px;
+  margin: 0 auto;
+  max-width: 400px;
 }
-/* line 90, ../../app/assets/stylesheets/custom.css.scss */
-.footer-logos .padded:last {
-  padding-right: 0;
+/* line 119, ../../app/assets/stylesheets/custom.css.scss */
+footer .footer-logos .lib-logo img {
+  margin-left: 5px;
+}
+/* line 124, ../../app/assets/stylesheets/custom.css.scss */
+footer .footer-logos .sponsor-logos {
+  margin-top: 15px;
+}
+/* line 125, ../../app/assets/stylesheets/custom.css.scss */
+footer .footer-logos .footer-links {
+  margin-top: 15px;
+}
+/* line 128, ../../app/assets/stylesheets/custom.css.scss */
+footer .footer-logos .footer-links li > a, footer .footer-logos .footer-links li > span {
+  font-size: 14px;
+  color: white;
 }
 
-/* line 95, ../../app/assets/stylesheets/custom.css.scss */
+/* line 136, ../../app/assets/stylesheets/custom.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 140, ../../app/assets/stylesheets/custom.css.scss */
 .vertical-center {
   display: inline-block;
   vertical-align: middle;
   float: none;
 }
 
-/* line 101, ../../app/assets/stylesheets/custom.css.scss */
+/* line 146, ../../app/assets/stylesheets/custom.css.scss */
 .sll-main-img {
-  max-width: 100%;
-  max-height: 250px;
+  margin-bottom: 15px;
 }
 
-/* line 108, ../../app/assets/stylesheets/custom.css.scss */
+/* line 152, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar {
   border-bottom: none;
   background-color: #548db0;
   -webkit-box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
 }
-/* line 114, ../../app/assets/stylesheets/custom.css.scss */
+/* line 158, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > .active > a {
   background-color: #42728f;
 }
-/* line 118, ../../app/assets/stylesheets/custom.css.scss */
+/* line 162, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > li > a {
   color: white;
   text-shadow: none;
 }
-/* line 120, ../../app/assets/stylesheets/custom.css.scss */
+/* line 164, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > li > a:hover {
   background-color: #77a4c0;
 }
 
-/* line 124, ../../app/assets/stylesheets/custom.css.scss */
+/* line 168, ../../app/assets/stylesheets/custom.css.scss */
 .sll-dates {
   text-align: center;
   box-sizing: border-box;
   border-right: 1px solid #eeeeee;
 }
 
-/* line 131, ../../app/assets/stylesheets/custom.css.scss */
+/* line 175, ../../app/assets/stylesheets/custom.css.scss */
 .sll-time-fields ul > li:first-child div.checkbox {
   margin-top: 0;
 }
-/* line 132, ../../app/assets/stylesheets/custom.css.scss */
+/* line 176, ../../app/assets/stylesheets/custom.css.scss */
 .sll-time-fields .checkbox {
   width: 160px;
 }
 
-/* line 135, ../../app/assets/stylesheets/custom.css.scss */
+/* line 179, ../../app/assets/stylesheets/custom.css.scss */
 .sll-light-gray {
   color: #999999;
 }
 
-/* line 139, ../../app/assets/stylesheets/custom.css.scss */
+/* line 183, ../../app/assets/stylesheets/custom.css.scss */
 .visible-xs-sm {
   display: block !important;
 }
 @media (min-width: 768px) {
-  /* line 139, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 183, ../../app/assets/stylesheets/custom.css.scss */
   .visible-xs-sm {
     display: none !important;
   }
 }
 
-/* line 146, ../../app/assets/stylesheets/custom.css.scss */
+/* line 190, ../../app/assets/stylesheets/custom.css.scss */
 .columns {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -8023,30 +8081,35 @@ footer .table-div, footer .table-div-three {
   column-gap: 30px;
 }
 
-/* line 150, ../../app/assets/stylesheets/custom.css.scss */
-.footer-img {
-  position: relative;
+/* line 194, ../../app/assets/stylesheets/custom.css.scss */
+.blue-well {
+  background-image: none;
+  background-color: #548db0;
 }
-/* line 152, ../../app/assets/stylesheets/custom.css.scss */
-.footer-img a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
+
+/* line 201, ../../app/assets/stylesheets/custom.css.scss */
+.sign-in-well label {
+  color: white;
 }
-/* line 153, ../../app/assets/stylesheets/custom.css.scss */
-.footer-img .mozilla-link {
-  left: 0;
-  width: 25%;
+/* line 202, ../../app/assets/stylesheets/custom.css.scss */
+.sign-in-well .form-group {
+  margin: 0;
 }
-/* line 154, ../../app/assets/stylesheets/custom.css.scss */
-.footer-img .kcpl-link {
-  left: 25%;
-  width: 50%;
+/* line 203, ../../app/assets/stylesheets/custom.css.scss */
+.sign-in-well .btn {
+  margin-top: 25px;
+  background-color: #d0ca99;
+  border-color: #bab068;
 }
-/* line 155, ../../app/assets/stylesheets/custom.css.scss */
-.footer-img .arsalon-link {
-  right: 0;
-  width: 25%;
+/* line 20, ../../app/assets/stylesheets/custom.css.scss */
+.sign-in-well .btn:hover, .sign-in-well .btn:focus {
+  background-color: #bdb46f;
+  background-position: 0 -15px;
+}
+/* line 26, ../../app/assets/stylesheets/custom.css.scss */
+.sign-in-well .btn:active, .sign-in-well .btn.active {
+  background-color: #bdb46f;
+  border-color: #bab068;
 }
 
 /*

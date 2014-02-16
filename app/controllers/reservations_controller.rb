@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
   before_filter :authenticate_user!, :except => [ :available ]
   
   def available
+    
     if params['sll-date']
       _date = params_to_date(params['sll-date'])
       redirect_to available_reservations_path(_date) and return
@@ -17,7 +18,9 @@ class ReservationsController < ApplicationController
   
   def index
   
-    @reservations = Reservation.where(:user_id => current_user.id)
+    @reservations = Reservation.where({
+      :user_id => current_user.id
+    }).order { start_datetime.desc }
 
     respond_to do |format|
       format.html # index.html.erb
