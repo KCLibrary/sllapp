@@ -1,2 +1,3 @@
 <%= render 'shared/intro_unit' %>
-<%= render 'shared/sign_in_form' %>
+<%= render 'shared/info_links' %>
+<%= render 'shared/sign_in_form' unless user_signed_in? %>

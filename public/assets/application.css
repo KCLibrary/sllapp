@@ -448,7 +448,7 @@ img {
 }
 
 /* line 81, ../../../.rvm/gems/ruby-1.9.3-p125/gems/bootstrap-sass-3.1.0.0/vendor/assets/stylesheets/bootstrap/_scaffolding.scss */
-.img-responsive, .sll-header .container img, footer img, .sll-main-img {
+.img-responsive, .sll-header .container img, footer img, .sll-main-img, .info-links img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -7852,19 +7852,21 @@ td.visible-print {
   height: 16px;
 }
 
-/* line 40, ../../app/assets/stylesheets/custom.css.scss */
+/* line 42, ../../app/assets/stylesheets/custom.css.scss */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
-.sll-navbar ul.nav > li > a {
+.sll-navbar ul.nav > li > a,
+.info-links p,
+.play {
   font-family: 'Play', sans-serif;
   text-transform: uppercase;
 }
 
-/* line 47, ../../app/assets/stylesheets/custom.css.scss */
+/* line 49, ../../app/assets/stylesheets/custom.css.scss */
 .sll-post {
   text-align: center;
 }
-/* line 48, ../../app/assets/stylesheets/custom.css.scss */
+/* line 50, ../../app/assets/stylesheets/custom.css.scss */
 .sll-post .btn {
   background-color: #d0ca99;
   border-color: #bab068;
@@ -7880,47 +7882,47 @@ h1, h2, h3, h4, h5, h6,
   border-color: #bab068;
 }
 
-/* line 52, ../../app/assets/stylesheets/custom.css.scss */
+/* line 54, ../../app/assets/stylesheets/custom.css.scss */
 .table-div, .table-div-three {
   display: table;
   width: 100%;
 }
-/* line 55, ../../app/assets/stylesheets/custom.css.scss */
+/* line 57, ../../app/assets/stylesheets/custom.css.scss */
 .table-div > div, .table-div-three > div {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 58, ../../app/assets/stylesheets/custom.css.scss */
+/* line 60, ../../app/assets/stylesheets/custom.css.scss */
 .table-div-three {
   text-align: center;
 }
-/* line 61, ../../app/assets/stylesheets/custom.css.scss */
+/* line 63, ../../app/assets/stylesheets/custom.css.scss */
 .table-div-three div:first-child {
   width: 33%;
   text-align: left;
 }
-/* line 62, ../../app/assets/stylesheets/custom.css.scss */
+/* line 64, ../../app/assets/stylesheets/custom.css.scss */
 .table-div-three div:last-child {
   width: 33%;
   text-align: right;
 }
 
-/* line 65, ../../app/assets/stylesheets/custom.css.scss */
+/* line 67, ../../app/assets/stylesheets/custom.css.scss */
 footer .table-div, footer .table-div-three {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-/* line 70, ../../app/assets/stylesheets/custom.css.scss */
+/* line 72, ../../app/assets/stylesheets/custom.css.scss */
 .sll-header {
   background-image: url(/assets/header-bg-2.png);
 }
-/* line 72, ../../app/assets/stylesheets/custom.css.scss */
+/* line 74, ../../app/assets/stylesheets/custom.css.scss */
 .sll-header .container {
   position: relative;
 }
-/* line 75, ../../app/assets/stylesheets/custom.css.scss */
+/* line 77, ../../app/assets/stylesheets/custom.css.scss */
 .sll-header .container .user-links {
   font-family: 'Play', sans-serif;
   font-size: 17px;
@@ -7929,39 +7931,39 @@ footer .table-div, footer .table-div-three {
   top: 15px;
   right: 15px;
 }
-/* line 82, ../../app/assets/stylesheets/custom.css.scss */
+/* line 84, ../../app/assets/stylesheets/custom.css.scss */
 .sll-header .container .user-links a {
   color: #58585b;
 }
 
 @media (min-width: 768px) {
-  /* line 87, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 89, ../../app/assets/stylesheets/custom.css.scss */
   .ul-table, .sll-navbar ul.navbar-nav, footer .footer-logos .footer-links {
     display: table;
     width: 100%;
   }
-  /* line 91, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 93, ../../app/assets/stylesheets/custom.css.scss */
   .ul-table > li, .sll-navbar ul.navbar-nav > li, footer .footer-logos .footer-links > li {
     float: none;
     display: table-cell;
     text-align: center;
   }
-  /* line 95, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 97, ../../app/assets/stylesheets/custom.css.scss */
   .ul-table > li:first-child, .sll-navbar ul.navbar-nav > li:first-child, footer .footer-logos .footer-links > li:first-child {
     text-align: left;
   }
-  /* line 96, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 98, ../../app/assets/stylesheets/custom.css.scss */
   .ul-table > li:last-child, .sll-navbar ul.navbar-nav > li:last-child, footer .footer-logos .footer-links > li:last-child {
     text-align: right;
   }
-  /* line 97, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 99, ../../app/assets/stylesheets/custom.css.scss */
   .ul-table > li > a, .sll-navbar ul.navbar-nav > li > a, footer .footer-logos .footer-links > li > a, .ul-table > li > span, .sll-navbar ul.navbar-nav > li > span, footer .footer-logos .footer-links > li > span {
     display: inline-block;
     font-size: 17px;
   }
 }
 
-/* line 109, ../../app/assets/stylesheets/custom.css.scss */
+/* line 111, ../../app/assets/stylesheets/custom.css.scss */
 footer {
   margin-top: 15px;
   background-color: #58585b;
@@ -7969,109 +7971,109 @@ footer {
   font-family: 'Play', sans-serif;
   text-align: center;
 }
-/* line 115, ../../app/assets/stylesheets/custom.css.scss */
+/* line 117, ../../app/assets/stylesheets/custom.css.scss */
 footer img {
   margin: 0 auto;
 }
-/* line 116, ../../app/assets/stylesheets/custom.css.scss */
+/* line 118, ../../app/assets/stylesheets/custom.css.scss */
 footer .footer-logos {
   margin-top: 15px;
 }
-/* line 118, ../../app/assets/stylesheets/custom.css.scss */
+/* line 120, ../../app/assets/stylesheets/custom.css.scss */
 footer .footer-logos .lib-logo {
   font-size: 12px;
   margin: 0 auto;
   max-width: 400px;
 }
-/* line 119, ../../app/assets/stylesheets/custom.css.scss */
+/* line 121, ../../app/assets/stylesheets/custom.css.scss */
 footer .footer-logos .lib-logo img {
   margin-left: 5px;
 }
-/* line 124, ../../app/assets/stylesheets/custom.css.scss */
+/* line 126, ../../app/assets/stylesheets/custom.css.scss */
 footer .footer-logos .sponsor-logos {
   margin-top: 15px;
 }
-/* line 125, ../../app/assets/stylesheets/custom.css.scss */
+/* line 127, ../../app/assets/stylesheets/custom.css.scss */
 footer .footer-logos .footer-links {
   margin-top: 15px;
 }
-/* line 128, ../../app/assets/stylesheets/custom.css.scss */
+/* line 130, ../../app/assets/stylesheets/custom.css.scss */
 footer .footer-logos .footer-links li > a, footer .footer-logos .footer-links li > span {
   font-size: 14px;
   color: white;
 }
 
-/* line 136, ../../app/assets/stylesheets/custom.css.scss */
+/* line 138, ../../app/assets/stylesheets/custom.css.scss */
 html, body {
   height: 100%;
 }
 
-/* line 140, ../../app/assets/stylesheets/custom.css.scss */
+/* line 142, ../../app/assets/stylesheets/custom.css.scss */
 .vertical-center {
   display: inline-block;
   vertical-align: middle;
   float: none;
 }
 
-/* line 146, ../../app/assets/stylesheets/custom.css.scss */
+/* line 148, ../../app/assets/stylesheets/custom.css.scss */
 .sll-main-img {
   margin-bottom: 15px;
 }
 
-/* line 152, ../../app/assets/stylesheets/custom.css.scss */
+/* line 154, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar {
   border-bottom: none;
   background-color: #548db0;
   -webkit-box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
 }
-/* line 158, ../../app/assets/stylesheets/custom.css.scss */
+/* line 160, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > .active > a {
   background-color: #42728f;
 }
-/* line 162, ../../app/assets/stylesheets/custom.css.scss */
+/* line 164, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > li > a {
   color: white;
   text-shadow: none;
 }
-/* line 164, ../../app/assets/stylesheets/custom.css.scss */
+/* line 166, ../../app/assets/stylesheets/custom.css.scss */
 .sll-navbar .navbar-nav > li > a:hover {
   background-color: #77a4c0;
 }
 
-/* line 168, ../../app/assets/stylesheets/custom.css.scss */
+/* line 170, ../../app/assets/stylesheets/custom.css.scss */
 .sll-dates {
   text-align: center;
   box-sizing: border-box;
   border-right: 1px solid #eeeeee;
 }
 
-/* line 175, ../../app/assets/stylesheets/custom.css.scss */
+/* line 177, ../../app/assets/stylesheets/custom.css.scss */
 .sll-time-fields ul > li:first-child div.checkbox {
   margin-top: 0;
 }
-/* line 176, ../../app/assets/stylesheets/custom.css.scss */
+/* line 178, ../../app/assets/stylesheets/custom.css.scss */
 .sll-time-fields .checkbox {
   width: 160px;
 }
 
-/* line 179, ../../app/assets/stylesheets/custom.css.scss */
+/* line 181, ../../app/assets/stylesheets/custom.css.scss */
 .sll-light-gray {
   color: #999999;
 }
 
-/* line 183, ../../app/assets/stylesheets/custom.css.scss */
+/* line 185, ../../app/assets/stylesheets/custom.css.scss */
 .visible-xs-sm {
   display: block !important;
 }
 @media (min-width: 768px) {
-  /* line 183, ../../app/assets/stylesheets/custom.css.scss */
+  /* line 185, ../../app/assets/stylesheets/custom.css.scss */
   .visible-xs-sm {
     display: none !important;
   }
 }
 
-/* line 190, ../../app/assets/stylesheets/custom.css.scss */
+/* line 192, ../../app/assets/stylesheets/custom.css.scss */
 .columns {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -8081,21 +8083,21 @@ html, body {
   column-gap: 30px;
 }
 
-/* line 194, ../../app/assets/stylesheets/custom.css.scss */
+/* line 196, ../../app/assets/stylesheets/custom.css.scss */
 .blue-well {
   background-image: none;
   background-color: #548db0;
 }
 
-/* line 201, ../../app/assets/stylesheets/custom.css.scss */
+/* line 203, ../../app/assets/stylesheets/custom.css.scss */
 .sign-in-well label {
   color: white;
 }
-/* line 202, ../../app/assets/stylesheets/custom.css.scss */
+/* line 204, ../../app/assets/stylesheets/custom.css.scss */
 .sign-in-well .form-group {
   margin: 0;
 }
-/* line 203, ../../app/assets/stylesheets/custom.css.scss */
+/* line 205, ../../app/assets/stylesheets/custom.css.scss */
 .sign-in-well .btn {
   margin-top: 25px;
   background-color: #d0ca99;
@@ -8110,6 +8112,16 @@ html, body {
 .sign-in-well .btn:active, .sign-in-well .btn.active {
   background-color: #bdb46f;
   border-color: #bab068;
+}
+
+/* line 211, ../../app/assets/stylesheets/custom.css.scss */
+.info-links {
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* line 214, ../../app/assets/stylesheets/custom.css.scss */
+.info-links img {
+  display: inline-block;
 }
 
 /*

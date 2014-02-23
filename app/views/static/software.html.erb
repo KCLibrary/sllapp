@@ -1,0 +1,26 @@
+<% items = {
+  "Office" => [
+    "Microsoft Office", "Word","PowerPoint","Excel","Publisher", "Open Office", "Scribus"
+  ], 
+  "Graphic Design:" => [
+    "Adobe Creative Cloud", "Photoshop","Illustrator","Lightroom","Inkscape", "Scribus", "GIMP"
+  ],
+  "Web/Software Development:" => [
+    "Komodo Edit", "Adobe Scout","Adobe Edge"
+  ],
+  "Audio Editing:" => ["Audacity"]
+} %>
+<div class="page-header">
+  <h4>Available Software</h4>
+</div>
+<p>We are pleased to offer an ever-expanding suite of software tools for the use of our patrons.</p>
+<% items.each do |k, v| %>
+  <p>
+    <strong class="play"><%= k %></strong>
+    <ul>
+      <% v.each do |s| %>
+        <li><%= s %>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
