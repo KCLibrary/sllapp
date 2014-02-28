@@ -1,26 +1,44 @@
-<% items = {
-  "Office" => [
-    "Microsoft Office", "Word","PowerPoint","Excel","Publisher", "Open Office", "Scribus"
-  ], 
-  "Graphic Design:" => [
-    "Adobe Creative Cloud", "Photoshop","Illustrator","Lightroom","Inkscape", "Scribus", "GIMP"
-  ],
-  "Web/Software Development:" => [
-    "Komodo Edit", "Adobe Scout","Adobe Edge"
-  ],
-  "Audio Editing:" => ["Audacity"]
-} %>
 <div class="page-header">
   <h4>Available Software</h4>
 </div>
 <p>We are pleased to offer an ever-expanding suite of software tools for the use of our patrons.</p>
-<% items.each do |k, v| %>
-  <p>
-    <strong class="play"><%= k %></strong>
-    <ul>
-      <% v.each do |s| %>
-        <li><%= s %>
-      <% end %>
-    </ul>
-  </p>
-<% end %>
+<div>
+  <strong class="play">Office</strong>
+  <ul class="list-unstyled">
+    <li>
+      <span>Microsoft Office</span>
+      <ul>
+        <li>Word</li>
+        <li>PowerPoint</li>
+        <li>Excel</li>
+        <li>Publisher</li>
+      </ul>
+    </li>
+    <li>Open Office</li>
+    <li>Scribus</li>
+  </ul>
+  <strong class="play">Graphic Design</strong>
+  <ul class="list-unstyled">
+    <li>
+      <span>Adobe Creative Cloud</span>
+      <ul>
+        <li>Photoshop</li>
+        <li>Illustrator</li>
+        <li>Lightroom</li>
+      </ul>
+    </li>
+    <li>Inkscape</li>
+    <li>Scribus</li>
+    <li>GIMP</li>
+  </ul>
+  <strong class="play">Web/Software Development</strong>
+  <ul class="list-unstyled">
+    <li>Komodo Edit</li>
+    <li>Adobe Scout</li>
+    <li>Adobe Edge</li>
+  </ul>
+  <strong class="play">Audio Editing</strong>
+  <ul class="list-unstyled">
+    <li>Audacity</li>
+  </ul>
+</div>
