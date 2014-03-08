@@ -39,4 +39,8 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
   
+  def user_timezone
+    cookies['browser.timezone'] || 'America/Chicago'
+  end
+  
 end

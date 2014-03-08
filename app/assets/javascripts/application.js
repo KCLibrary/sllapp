@@ -15,4 +15,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require eternicode-bootstrap-datepicker/bootstrap-datepicker.js
+//= require jquery.cookie.js
+//= require detect_timezone.js
 //= require custom.js

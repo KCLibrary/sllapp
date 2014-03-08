@@ -20,10 +20,11 @@
           <th>Time</th>
         </tr>
         <tr>
-          <td><%= @reservation.start_date_long_formatted_string %></td>
-          <td>
-            <%= raw(@reservation.time_slot_dashed_formatted_string) %>
-          </td>
+          <% date = @reservation.start_datetime.in_time_zone(user_timezone).to_date.to_formatted_s(:long) %>
+          <% time = raw([ @reservation.start_datetime.in_time_zone(user_timezone).strftime("%I:%M%p"), 
+            @reservation.end_datetime.in_time_zone(user_timezone).strftime("%I:%M%p") ].join(" &ndash; ")) %>
+          <td><%= date %></td>
+          <td><%= time %></td>
         </tr>
       </table>
     </div>

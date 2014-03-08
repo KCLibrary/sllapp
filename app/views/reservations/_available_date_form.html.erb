@@ -13,9 +13,9 @@
                   } %>
               <% end %>
               <label class="time-helper">
-                <span><%= ts.start_hour.strftime("%I:%M%p") %></span>
+                <span><%= ts.start_hour.in_time_zone(user_timezone).strftime("%I:%M%p") %></span>
                 <span class="sll-light-gray">
-                  - <%= ts.end_hour.strftime("%I:%M%p") %>
+                  - <%= ts.end_hour.in_time_zone(user_timezone).strftime("%I:%M%p") %>
                 </span>
               </label>
             </div>    

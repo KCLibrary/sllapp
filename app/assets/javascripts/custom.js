@@ -1,3 +1,12 @@
+function setBrowserCookie() {
+  if ( $.cookie("browser.timezone") == undefined || $.cookie("browser.timezone") === null ) {
+    $.cookie("browser.timezone", jstz.determine().name(), {
+      expires: 365,
+      path: '/'
+    });
+  }
+}
+
 $(document).ready(function() {
 
   function pad(s) {
@@ -21,7 +30,6 @@ $(document).ready(function() {
     $(this).closest('li').find('[type="checkbox"]').first().trigger('click');
   });
 
-
-  
+  setBrowserCookie();  
 
 });
