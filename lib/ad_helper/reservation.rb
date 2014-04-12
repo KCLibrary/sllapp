@@ -60,7 +60,8 @@ module AdHelper
     end
     
     def fill_index
-      (start_datetime.utc.wday * 24) + (start_datetime.utc.hour)
+      bias = Time.now.in_time_zone('America/Chicago').dst? ? 1 : 0
+      (start_datetime.utc.wday * 24) + (start_datetime.utc.hour) + bias
     end
     
     def fill_values(b)
